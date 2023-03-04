@@ -1,7 +1,6 @@
 """
 Time normaliser
 """
-
 import re
 
 _time_re = re.compile(

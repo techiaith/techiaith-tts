@@ -1,6 +1,11 @@
 """
 Script to replace known phrases in text
 """
+black_list = [
+    ["golwg360", "golwg tri chwech ddim"],
+    ["s4c", "es pedwar ec"],
+    ["%", " y cant"]
+]
 
 
 def replace_phrase(text):
@@ -15,10 +20,3 @@ def replace_phrase(text):
         else:
             print("Invalid text pair, you have {} items and should have 2", len(item))
     return text
-
-
-black_list = [
-    ["golwg360", "golwg tri chwech ddim"],
-    ["s4c", "es pedwar ec"],
-    ["%", " y cant"]
-]

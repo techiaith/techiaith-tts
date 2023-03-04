@@ -1,7 +1,6 @@
 """
 Make a lexicon of words and their gender
 """
-
 import importlib.resources as ir
 
 from . import data

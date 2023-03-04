@@ -1,7 +1,6 @@
 """
 Test number normaliser
 """
-
 from techiaith.tts.testun.number_norm import find_numbers
 
 tests = [

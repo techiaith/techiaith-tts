@@ -1,7 +1,6 @@
 """
 Test time normalisation
 """
-
 from techiaith.tts.testun.time_norm import expand_time_welsh
 
 tests = [

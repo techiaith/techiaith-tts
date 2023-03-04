@@ -1,7 +1,6 @@
 """
 Main number normalisation
 """
-
 import re
 
 from .lexicon import build_lexicon
