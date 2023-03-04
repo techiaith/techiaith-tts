@@ -1,23 +1,23 @@
 Installation
 ============
 
-**my-package** supports Python >= 3.8.
+**techiaith-tts** supports Python >= 3.8.
 
 ## Installing with `pip`
 
-**my-package** is available [on PyPI](https://pypi.org/project/my-package/). Just run
+**techiaith-tts** is available [on PyPI](https://pypi.org/project/techiaith-tts/). Just run
 
 ```bash
-pip install my-package
+pip install techiaith-tts
 ```
 
 ## Installing from source
 
-To install **my-package** from source, first clone [the repository](https://github.com/allenai/python-package-template):
+To install **techiaith-tts** from source, first clone [the repository](https://github.com/str20tbl/techiaith-tts):
 
 ```bash
-git clone https://github.com/allenai/python-package-template.git
-cd python-package-template
+git clone https://github.com/str20tbl/techiaith-tts.git
+cd techiaith-tts
 ```
 
 Then run
