@@ -53,6 +53,12 @@ mutations = [
 ]
 
 errors = [
+    ["dwy cant", "dau gant"],
+    ["dwy gant", "dau gant"],
+    ["dwy punt", "dwy bunt"],
+    ["chwe punt", "chwe phunt"],
+    ["saith punt", "saith bunt"],
+    ["wyth punt", "wyth bunt"],
     ["un deg dim", "deg"],
     ["un deg mil", "deg mil"],
     ["un deg miliwn", "deg miliwn"],
@@ -106,13 +112,14 @@ def wordify_and_replace(regex, text):
     if len(nums) > 0:
         for num in nums:
             new_numbers = wordify(num)
+            if "punt" in new_numbers or "bunt" in new_numbers:
+                for mut in fem_mu:
+                    if mut[0] in new_numbers:
+                        new_numbers = new_numbers.replace(mut[0], mut[1])
             text = text.replace(num, new_numbers)
             if text != new_numbers:
-                next_word = text.split(new_numbers, maxsplit=1)[-1].split(maxsplit=1)
-                if next_word:
-                    info = lexicon[next_word[0]]
-                    if "Fem" in info:
-                        text = mutate_number(text)
+                text = mutate_number(text, new_numbers)
+    text = find_replace(text, errors, False)
     return text
 
 
@@ -126,17 +133,22 @@ fem_mu = [
 ]
 
 
-def mutate_number(number):
+def mutate_number(text, number):
     """
-    mutate known njumbers
+    mutate known numbers
+    :param text:
     :param number:
     :return:
     """
-    for num in number.split(" "):
-        for mut in fem_mu:
-            if mut[0] == num:
-                number = number.replace(mut[0], mut[1])
-    return number
+    next_word = text.split(number, maxsplit=1)[-1].split(maxsplit=1)
+    if next_word:
+        info = lexicon[next_word[0]]
+        if "Fem" in info:
+            for num in number.split(" "):
+                for mut in fem_mu:
+                    if mut[0] == num:
+                        text = text.replace(mut[0], mut[1])
+    return text
 
 
 def wordify(number):

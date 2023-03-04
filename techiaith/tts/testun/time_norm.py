@@ -24,7 +24,7 @@ mut_numbers = {
     8: "wyth",
     9: "naw",
     10: "deg",
-    11: "unarddeg",
+    11: "un ar ddeg",
     12: "ddeuddeg",
 }
 
@@ -64,6 +64,11 @@ numbers = {
 
 
 def known_times(hour):
+    """
+    a list of known times that don't follow the normal pattern
+    :param hour:
+    :return:
+    """
     time = ""
     if hour == 12:
         time = "hanner dydd"
@@ -80,6 +85,11 @@ def _expand_num(n: int, pre: str) -> str:
 
 
 def mutate(time_input: str) -> str:
+    """
+    mutate the know times
+    :param time_input:
+    :return:
+    """
     replacements = [["dau munud", "dau funud"], ["chwech munud", "chwe munud"]]
     for replacement in replacements:
         time_input = time_input.replace(replacement[0], replacement[1])
@@ -129,4 +139,9 @@ def _expand_time_welsh(match: "re.Match") -> str:
 
 
 def expand_time_welsh(text: str) -> str:
+    """
+    expand and mutate time
+    :param text:
+    :return:
+    """
     return mutate(re.sub(_time_re, _expand_time_welsh, text))
