@@ -1,3 +1,7 @@
+"""
+Main number normalisation
+"""
+
 import re
 
 from .lexicon import build_lexicon
@@ -63,6 +67,11 @@ lexicon = build_lexicon()
 
 
 def find_numbers(text):
+    """
+    find the numbers in a string
+    :param text:
+    :return:
+    """
     text = text.replace(",", "")
     is_mob, new_num = is_mobile(text)
     if is_mob:
@@ -76,8 +85,14 @@ def find_numbers(text):
     return text
 
 
-def wordify_and_replace(regexpr, text):
-    nums = re.findall(regexpr, text)
+def wordify_and_replace(regex, text):
+    """
+    replace the results of wordify in the string matching the regex
+    :param regex:
+    :param text:
+    :return:
+    """
+    nums = re.findall(regex, text)
     if len(nums) > 0:
         for num in nums:
             new_numbers = wordify(num)
@@ -102,6 +117,11 @@ fem_mu = [
 
 
 def mutate_number(number):
+    """
+    mutate known njumbers
+    :param number:
+    :return:
+    """
     for num in number.split(" "):
         for mut in fem_mu:
             if mut[0] == num:
@@ -110,6 +130,11 @@ def mutate_number(number):
 
 
 def wordify(number):
+    """
+    convert a digit in string form into word form
+    :param number:
+    :return:
+    """
     word_list = []
     cleaned_string = ""
     append = " "
@@ -185,6 +210,11 @@ def wordify(number):
 
 
 def is_mobile(word_number):
+    """
+    regex to find mobile numbers
+    :param word_number:
+    :return:
+    """
     phone_regex = "^\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}$"
     result = re.match(phone_regex, word_number)
     if result:
@@ -194,6 +224,13 @@ def is_mobile(word_number):
 
 
 def find_replace(word_number, black_list, strats_with):
+    """
+    Find and replace words from a list
+    :param word_number:
+    :param black_list:
+    :param strats_with:
+    :return:
+    """
     for replacement in black_list:
         word_number = word_number.replace(replacement[0], replacement[1])
     if strats_with:

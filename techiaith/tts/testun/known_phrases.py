@@ -1,4 +1,14 @@
+"""
+Script to replace known phrases in text
+"""
+
+
 def replace_phrase(text):
+    """
+    Replace known phrases so as not to put normal numbers into the mix
+    :param text:
+    :return:
+    """
     for item in black_list:
         if len(item) == 2:
             text = text.replace(item[0], item[1])

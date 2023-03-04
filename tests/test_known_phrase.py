@@ -1,3 +1,6 @@
+"""
+Test known_phrases
+"""
 from techiaith.tts.testun.known_phrases import replace_phrase
 
 
