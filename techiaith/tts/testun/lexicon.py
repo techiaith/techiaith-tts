@@ -18,6 +18,6 @@ def build_lexicon():
             cells = line.split("\t")
             for cell in cells:
                 if "Gender" in cell:
-                    lexicon[cells[0]] = cell[cell.index("Gender"):]
+                    lexicon[cells[0]] = cell[cell.index("Gender") :]
                     break
     return lexicon

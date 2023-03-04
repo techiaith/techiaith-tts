@@ -80,10 +80,7 @@ def _expand_num(n: int, pre: str) -> str:
 
 
 def mutate(time_input: str) -> str:
-    replacements = [
-        ["dau munud", "dau funud"],
-        ["chwech munud", "chwe munud"]
-    ]
+    replacements = [["dau munud", "dau funud"], ["chwech munud", "chwe munud"]]
     for replacement in replacements:
         time_input = time_input.replace(replacement[0], replacement[1])
     return time_input

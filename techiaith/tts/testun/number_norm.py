@@ -17,7 +17,12 @@ numbers = {
     "1": {"lemma": "un"},
     "2": {"lemma": "dau", "lemma_fem": "dwy"},
     "3": {"lemma": "tri", "lemma_fem": "tair", "aspirate": "thri", "aspirate_fem": "thair"},
-    "4": {"lemma": "pedwar", "lemma_fem": "pedair", "aspirate": "phedwar", "aspirate_fem": "phedair"},
+    "4": {
+        "lemma": "pedwar",
+        "lemma_fem": "pedair",
+        "aspirate": "phedwar",
+        "aspirate_fem": "phedair",
+    },
     "5": {"lemma": "pump", "lemma_fem": "pum", "aspirate": "phump", "aspirate_fem": "phum"},
     "6": {"lemma": "chwech", "lemma_fem": "chwe"},
     "7": {"lemma": "saith"},
@@ -25,12 +30,18 @@ numbers = {
     "9": {"lemma": "naw"},
     "10": {"lemma": "deg", "soft": "ddeg"},
     "20": {"lemma": "ugain"},
-    "100": {"lemma": "cant", "lemma_fem": "can", "soft": "gant", "soft_lemma_fem": "gan", "aspirate": "chant",
-            "aspirate_fem": "chan"},
+    "100": {
+        "lemma": "cant",
+        "lemma_fem": "can",
+        "soft": "gant",
+        "soft_lemma_fem": "gan",
+        "aspirate": "chant",
+        "aspirate_fem": "chan",
+    },
     "1000": {"lemma": "mil", "soft": "fil"},
     "1000000": {"lemma": "miliwn", "soft": "filiwn"},
     "a": {"lemma": "a", "c": "ac", "g": "ag"},
-    "m": {"lemma": "miliwn", "soft": "filiwn"}
+    "m": {"lemma": "miliwn", "soft": "filiwn"},
 }
 
 mutations = [
@@ -38,7 +49,7 @@ mutations = [
     ["dau deg", "dau ddeg"],
     ["chwech deg", "chwe deg"],
     ["chwech cant", "chwe chant"],
-    ["chwech mil", "chwe mil"]
+    ["chwech mil", "chwe mil"],
 ]
 
 errors = [
@@ -77,10 +88,10 @@ def find_numbers(text):
         new_numbers = wordify(new_num)
         text = text.replace(new_num, new_numbers)
     else:
-        text = wordify_and_replace(r'£\d+\.\d+m?', text)
-        text = wordify_and_replace(r'£\d+m?', text)
-        text = wordify_and_replace(r'\d+\.\d+', text)
-        text = wordify_and_replace(r'\d+', text)
+        text = wordify_and_replace(r"£\d+\.\d+m?", text)
+        text = wordify_and_replace(r"£\d+m?", text)
+        text = wordify_and_replace(r"\d+\.\d+", text)
+        text = wordify_and_replace(r"\d+", text)
     return text
 
 
@@ -111,7 +122,7 @@ fem_mu = [
     ["pedwar", "pedair"],
     ["pump", "pum"],
     ["chwech", "chwe"],
-    ["cant", "can"]
+    ["cant", "can"],
 ]
 
 
@@ -178,7 +189,7 @@ def wordify(number):
         marker_count = 0
         for char in number[::-1]:
             band.append(char)
-            exit_condition = (len(band) + (band_count * 3))
+            exit_condition = len(band) + (band_count * 3)
             if len(band) == 3 or exit_condition == len(number):
                 band_count += 1
                 place_count = 0
@@ -214,7 +225,9 @@ def is_mobile(word_number):
     :param word_number:
     :return:
     """
-    phone_regex = "^\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}$"
+    phone_regex = (
+        "^\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}$"
+    )
     result = re.match(phone_regex, word_number)
     if result:
         if len(result.group(0)) >= 11:

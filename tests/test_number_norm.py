@@ -60,9 +60,15 @@ tests = [
     ["10020360", "deg miliwn dau ddeg mil tri cant chwe deg"],
     ["07984663484", "dim saith naw wyth pedwar chwech chwech tri pedwar wyth pedwar"],
     ["079846634840", "dim saith naw wyth pedwar chwech chwech tri pedwar wyth pedwar dim"],
-    ["+4479846634840", "plws pedwar pedwar saith naw wyth pedwar chwech chwech tri pedwar wyth pedwar dim"],
+    [
+        "+4479846634840",
+        "plws pedwar pedwar saith naw wyth pedwar chwech chwech tri pedwar wyth pedwar dim",
+    ],
     ["01248 345321", "dim un dau pedwar wyth tri pedwar pump tri dau un"],
-    ["123,456,789", "cant dau ddeg tri miliwn pedwar cant pump deg chwe mil saith cant wyth deg naw"],
+    [
+        "123,456,789",
+        "cant dau ddeg tri miliwn pedwar cant pump deg chwe mil saith cant wyth deg naw",
+    ],
     ["4.99", "pedwar pwynt naw deg naw"],
     ["499,000.34", "pedwar cant naw deg naw mil pwynt tri deg pedwar"],
     ["£4.99", "pedwar punt naw deg naw ceiniog"],
