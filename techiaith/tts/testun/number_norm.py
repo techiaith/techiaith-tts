@@ -1,5 +1,7 @@
 import re
+
 from .lexicon import build_lexicon
+
 
 numbers = {
     "+": {"lemma": "plws"},
