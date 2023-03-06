@@ -4,6 +4,7 @@ Date normaliser
 import re
 
 from .number_norm import wordify
+from .lookups import months, days
 
 _time_re = re.compile(
     r"""\b
@@ -15,55 +16,6 @@ _time_re = re.compile(
                           \b""",
     re.IGNORECASE | re.X,
 )
-
-months = {
-    1: "Ionawr",
-    2: "Chwefror",
-    3: "Mawrth",
-    4: "Ebrill",
-    5: "Mai",
-    6: "Mehefin",
-    7: "Gorffennaf",
-    8: "Awst",
-    9: "Medi",
-    10: "Hydref",
-    11: "Tachwedd",
-    12: "Rhagfyr"
-}
-
-days = {
-    1: "cyntaf",
-    2: "ail",
-    3: "trydydd",
-    4: "pedwerydd",
-    5: "pumed",
-    6: "chweched",
-    7: "seithfed",
-    8: "wythfed",
-    9: "nawfed",
-    10: "degfed",
-    11: "unfed ar ddeg",
-    12: "deuddegfed",
-    13: "trydydd ar ddeg",
-    14: "pedwerydd ar ddeg",
-    15: "pymthegfed",
-    16: "unfed ar bymtheg",
-    17: "ail ar bymtheg",
-    18: "deunawfed",
-    19: "pedwerydd ar bymtheg",
-    20: "ugeinfed",
-    21: "unfed ar hugain",
-    22: "ail ar hugain",
-    23: "trydydd ar hugain",
-    24: "pedwerydd ar hugain",
-    25: "pumed ar hugain",
-    26: "chweched ar hugain",
-    27: "seithfed ar hugain",
-    28: "wythfed ar hugain",
-    29: "nawfed ar hugain",
-    30: "degfed ar hugain",
-    31: "unfed ar ddeg ar hugain",
-}
 
 
 def mutate(time_input: str) -> str:

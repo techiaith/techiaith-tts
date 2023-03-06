@@ -4,53 +4,7 @@ Main number normalisation
 import re
 
 from .lexicon import build_lexicon
-
-numbers = {
-    "+": {"lemma": "plws"},
-    "/": {"lemma": "rhannu gyda"},
-    "*": {"lemma": "lluosi"},
-    "-": {"lemma": "minws"},
-    ".": {"lemma": "pwynt"},
-    "£": {"lemma": "punt"},
-    "c": {"lemma": "ceiniog"},
-    "0": {"lemma": "dim"},
-    "1": {"lemma": "un"},
-    "2": {"lemma": "dau", "lemma_fem": "dwy"},
-    "3": {"lemma": "tri", "lemma_fem": "tair", "aspirate": "thri", "aspirate_fem": "thair"},
-    "4": {
-        "lemma": "pedwar",
-        "lemma_fem": "pedair",
-        "aspirate": "phedwar",
-        "aspirate_fem": "phedair",
-    },
-    "5": {"lemma": "pump", "lemma_fem": "pum", "aspirate": "phump", "aspirate_fem": "phum"},
-    "6": {"lemma": "chwech", "lemma_fem": "chwe"},
-    "7": {"lemma": "saith"},
-    "8": {"lemma": "wyth"},
-    "9": {"lemma": "naw"},
-    "10": {"lemma": "deg", "soft": "ddeg"},
-    "20": {"lemma": "ugain"},
-    "100": {
-        "lemma": "cant",
-        "lemma_fem": "can",
-        "soft": "gant",
-        "soft_lemma_fem": "gan",
-        "aspirate": "chant",
-        "aspirate_fem": "chan",
-    },
-    "1000": {"lemma": "mil", "soft": "fil"},
-    "1000000": {"lemma": "miliwn", "soft": "filiwn"},
-    "a": {"lemma": "a", "c": "ac", "g": "ag"},
-    "m": {"lemma": "miliwn", "soft": "filiwn"},
-}
-
-mutations = [
-    ["dau cant", "dau gant"],
-    ["dau deg", "dau ddeg"],
-    ["chwech deg", "chwe deg"],
-    ["chwech cant", "chwe chant"],
-    ["chwech mil", "chwe mil"],
-]
+from .lookups import mutations, number_dict, fem_mu
 
 errors = [
     ["dwy cant", "dau gant"],
@@ -65,10 +19,6 @@ errors = [
     [" dim cant", ""],
     [" dim deg", ""],
     [" dim mil", ""],
-    # ["miliwn dim", "miliwn"],
-    # ["mil dim", "mil"],
-    # ["cant dim", "cant"],
-    # ["deg dim", "deg"],
 ]
 
 start_errors = [
@@ -123,16 +73,6 @@ def wordify_and_replace(regex, text):
     return text
 
 
-fem_mu = [
-    ["dau", "dwy"],
-    ["tri", "tair"],
-    ["pedwar", "pedair"],
-    ["pump", "pum"],
-    ["chwech", "chwe"],
-    ["cant", "can"],
-]
-
-
 def mutate_number(text, number):
     """
     mutate known numbers
@@ -164,15 +104,15 @@ def wordify(number):
     if is_mob:
         for char in new_num:
             if char not in " ":
-                word_integer = numbers[char]["lemma"]
+                word_integer = number_dict[char]["lemma"]
                 word_list.append(word_integer)
         cleaned_string = " ".join(word_list)
-    elif number in numbers:
-        cleaned_string = numbers[number]["lemma"]
+    elif number in number_dict:
+        cleaned_string = number_dict[number]["lemma"]
     elif "£" in number:
         money_number = number.replace("£", "")
         if "m" in number:
-            append += numbers["m"]["lemma"] + " " + numbers["£"]["lemma"]
+            append += number_dict["m"]["lemma"] + " " + number_dict["£"]["lemma"]
             number = money_number.replace("m", "")
             cleaned_string = wordify(number)
         else:
@@ -182,18 +122,18 @@ def wordify(number):
                 for num in nums:
                     cleaned_string += wordify(num)
                     if c < len(nums):
-                        cleaned_string += " " + numbers["£"]["lemma"] + " "
+                        cleaned_string += " " + number_dict["£"]["lemma"] + " "
                     c += 1
-                cleaned_string += " " + numbers["c"]["lemma"] + " "
+                cleaned_string += " " + number_dict["c"]["lemma"] + " "
             else:
-                cleaned_string = wordify(money_number) + " " + numbers["£"]["lemma"]
+                cleaned_string = wordify(money_number) + " " + number_dict["£"]["lemma"]
     elif "." in number:
         nums = number.split(".")
         c = 1
         for num in nums:
             cleaned_string += wordify(num)
             if c < len(nums):
-                cleaned_string += " " + numbers["."]["lemma"] + " "
+                cleaned_string += " " + number_dict["."]["lemma"] + " "
             c += 1
     else:
         band = []
@@ -208,7 +148,7 @@ def wordify(number):
                 word_list.append(markers[marker_count])
                 marker_count += 1
                 for digit in band:
-                    word_integer = numbers[digit]["lemma"]
+                    word_integer = number_dict[digit]["lemma"]
                     if word_integer != "dim" and len(number) > 1:
                         word_list.append(band_markers[place_count])
                         word_list.append(word_integer)
