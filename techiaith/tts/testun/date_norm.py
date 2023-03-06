@@ -46,6 +46,7 @@ days = {
     12: "deuddegfed",
     13: "trydydd ar ddeg",
     14: "pedwerydd ar ddeg",
+    15: "pymthegfed",
     16: "unfed ar bymtheg",
     17: "ail ar bymtheg",
     18: "deunawfed",
