@@ -7,6 +7,7 @@ tests = [
     ["0", "dim"],
     ["1", "un"],
     ["2", "dau"],
+    ["2 gath", "dwy gath"],
     ["3", "tri"],
     ["4", "pedwar"],
     ["5", "pump"],
@@ -84,6 +85,9 @@ tests = [
     ["£7", "saith bunt"],
     ["£8", "wyth bunt"],
     ["£9", "naw punt"],
+    ["£10", "deg punt"],
+    ["£20m", "ugain miliwn punt"],
+    ["£2.3m", "dwy pwynt tair miliwn punt"],
     ["£99", "naw deg naw punt"],
 ]
 

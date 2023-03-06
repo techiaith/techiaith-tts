@@ -172,7 +172,7 @@ def wordify(number):
     elif "£" in number:
         money_number = number.replace("£", "")
         if "m" in number:
-            append += numbers["m"]["lemma"]
+            append += numbers["m"]["lemma"] + " " + numbers["£"]["lemma"]
             number = money_number.replace("m", "")
             cleaned_string = wordify(number)
         else:
