@@ -86,6 +86,7 @@ tests = [
     ["£8", "wyth bunt"],
     ["£9", "naw punt"],
     ["£10", "deg punt"],
+    ["£1050.25", "mil pum deg punt dwy ddeg pum ceiniog"],
     ["£20m", "ugain miliwn punt"],
     ["£2.3m", "dwy pwynt tair miliwn punt"],
     ["£99", "naw deg naw punt"],
