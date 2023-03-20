@@ -154,6 +154,12 @@ mutations = [
     ["pump mil", "pum mil"],
     ["cant pedwar", "can pedwar"],
     ["gant punt", "can punt"],
+    ["o Mawrth", "o Fawrth"],
+    ["o Medi", "o Fedi"],
+    ["o Mehefin", "o Fehefin"],
+    ["o Gorffennaf", "o Orffennaf"],
+    ["o Tachwedd", "o Dachwedd"],
+    ["o Rhagfyr", "o Ragfyr"],
 ]
 
 fem_mu = [
