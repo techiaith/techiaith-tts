@@ -81,10 +81,10 @@ def _expand_time_welsh(match: "re.Match") -> str:
         time.append(_expand_num(hour, sep))
         am_pm = match.group(7)
         if am_pm is None:
-            time.append("y hwyr" if past_noon else "y bore")
+            time.append("yr hwyr" if past_noon else "y bore")
         else:
             if "h" in am_pm:
-                time.append("y hwyr")
+                time.append("yr hwyr")
             else:
                 time.append("y bore")
 
