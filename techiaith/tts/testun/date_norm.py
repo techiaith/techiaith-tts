@@ -2,9 +2,10 @@
 Date normaliser
 """
 import re
+from typing import List
 
 from .number_norm import wordify
-from .lookups import months, days
+from .lookups import months, days, mutations
 
 _time_re = re.compile(
     r"""\b
@@ -18,13 +19,13 @@ _time_re = re.compile(
 )
 
 
-def mutate(time_input: str) -> str:
+def mutate(time_input: str, replacements: List[str]) -> str:
     """
     mutate the know times
     :param time_input:
+    :param replacements:
     :return:
     """
-    replacements = []
     for replacement in replacements:
         time_input = time_input.replace(replacement[0], replacement[1])
     return time_input
@@ -59,4 +60,4 @@ def expand_date_welsh(text: str) -> str:
     :param text:
     :return:
     """
-    return mutate(re.sub(_time_re, _expand_date_welsh, text))
+    return mutate(re.sub(_time_re, _expand_date_welsh, text), mutations)
