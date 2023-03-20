@@ -22,7 +22,7 @@ errors = [
     [" dim mil", ""],
     [" i dau", " i ddau"],
     ["un punt", "un bunt"],
-    ["dwy pwynt", "dau bwynt"]
+    ["dwy pwynt", "dau bwynt"],
 ]
 
 start_errors = [

@@ -92,9 +92,8 @@ tests = [
     ["£99", "naw deg naw punt"],
 ]
 
+
 def test_wordify():
     for test in tests:
         words = find_numbers(test[0])
         assert test[1] == words
-
-
