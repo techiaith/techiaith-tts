@@ -30,16 +30,16 @@ Contents
 Team
 ----
 
-**techiaith-tts** is developed and maintained by the AllenNLP team, backed by
-`the Allen Institute for Artificial Intelligence (AI2) <https://allenai.org/>`_.
-AI2 is a non-profit institute with the mission to contribute to humanity through high-impact AI research and engineering.
+**techiaith-tts** is developed and maintained by the `Uned Technolegau Iaith (UTI) <https://techiaith.cymru/>` team, backed by
+`Prifysgol Bangor (UTI) <https://bangor.ac.uk/>`.
+A self-funded research unit that develops technologies for the Welsh language.
 To learn more about who specifically contributed to this codebase, see
 `our contributors <https://github.com/str20tbl/techiaith-tts/graphs/contributors>`_ page.
 
 License
 -------
 
-**techiaith-tts** is licensed under `Apache 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_.
+**techiaith-tts** is licensed under `MIT License <https://mit-license.org>`_.
 A full copy of the license can be found `on GitHub <https://github.com/str20tbl/techiaith-tts/blob/main/LICENSE>`_.
 
 Indices and tables
