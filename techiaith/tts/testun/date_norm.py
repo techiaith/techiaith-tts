@@ -19,7 +19,7 @@ _time_re = re.compile(
 )
 
 
-def mutate(time_input: str, replacements: List[str]) -> str:
+def mutate(time_input, replacements):
     """
     mutate the know times
     :param time_input:
@@ -31,7 +31,7 @@ def mutate(time_input: str, replacements: List[str]) -> str:
     return time_input
 
 
-def _expand_date_welsh(match: "re.Match") -> str:
+def _expand_date_welsh(match):
     date = []
     day = 0
     if match.group(1):
@@ -54,7 +54,7 @@ def _expand_date_welsh(match: "re.Match") -> str:
     return " ".join(date)
 
 
-def expand_date_welsh(text: str) -> str:
+def expand_date_welsh(text):
     """
     expand and mutate time
     :param text:
