@@ -23,15 +23,3 @@ def test_time():
     for time in tests:
         result = expand_time_welsh(time[0])
         assert result == time[1]
-
-
-
-
-
-
-
-
-
-
-
-
