@@ -142,9 +142,18 @@ number_dict = {
 mutations = [
     ["dau cant", "dau gant"],
     ["dau deg", "dau ddeg"],
+    ["dau pedwar", "dau bedwar"],
+    ["tri cant", "tri chant"],
+    ["tri miliwn", "tair miliwn"],
+    ["tri pedwar", "tri phedwar"],
     ["chwech deg", "chwe deg"],
     ["chwech cant", "chwe chant"],
     ["chwech mil", "chwe mil"],
+    ["pump deg", "pum deg"],
+    ["pump cant", "pum cant"],
+    ["pump mil", "pum mil"],
+    ["cant pedwar", "can pedwar"],
+    ["gant punt", "can punt"],
 ]
 
 fem_mu = [

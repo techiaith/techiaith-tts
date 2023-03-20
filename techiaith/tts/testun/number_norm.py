@@ -8,6 +8,7 @@ from .lookups import mutations, number_dict, fem_mu
 
 errors = [
     ["dwy cant", "dau gant"],
+    ["dwy can punt", "dau can punt"],
     ["dwy gant", "dau gant"],
     ["dwy punt", "dwy bunt"],
     ["chwe punt", "chwe phunt"],
@@ -19,6 +20,9 @@ errors = [
     [" dim cant", ""],
     [" dim deg", ""],
     [" dim mil", ""],
+    [" i dau", " i ddau"],
+    ["un punt", "un bunt"],
+    ["dwy pwynt", "dau bwynt"]
 ]
 
 start_errors = [
