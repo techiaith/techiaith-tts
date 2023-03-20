@@ -3,7 +3,7 @@ Time normaliser
 """
 import re
 
-from .lookups import numbers, mut_numbers
+from .lookups import mut_numbers, numbers
 
 _time_re = re.compile(
     r"""\b
