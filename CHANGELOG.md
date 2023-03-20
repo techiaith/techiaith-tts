@@ -7,7 +7,8 @@ The format is based on Keep a Changelog, and this project adheres to
 Semantic Versioning.
 
 
-Unreleased
-==========
+## Unreleased
+
+## [v0.1.0](https://github.com/str20tbl/techiaith-tts/releases/tag/v0.1.0) - 2023-03-20
 
 First release with initial code and test
