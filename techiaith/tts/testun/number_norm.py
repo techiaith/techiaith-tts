@@ -4,7 +4,7 @@ Main number normalisation
 import re
 
 from .lexicon import build_lexicon
-from .lookups import mutations, number_dict, fem_mu
+from .lookups import fem_mu, mutations, number_dict
 
 errors = [
     ["dwy cant", "dau gant"],

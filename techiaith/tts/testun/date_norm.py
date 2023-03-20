@@ -4,8 +4,8 @@ Date normaliser
 import re
 from typing import List
 
+from .lookups import days, months, mutations
 from .number_norm import wordify
-from .lookups import months, days, mutations
 
 _time_re = re.compile(
     r"""\b
