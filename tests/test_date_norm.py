@@ -3,16 +3,6 @@ Test number normaliser
 """
 from techiaith.tts.testun.date_norm import expand_date_welsh
 
-# TODO: Ychwanegu pob mis i xx/xx/xx
-
-## Trin yn + nnnn fel blwyddyn o fewn cyfnod penodol?
-# TODO: ym + 19xxx = ym mil naw x x
-# TODO: yn + 2000 - 2050(?) = yn nwy fil x x
-
-# TODO: Degawdau
-# 1920au - "un naw dau ddegau" (?)
-# 20au - "ugeiniau"
-
 
 tests = [
     [

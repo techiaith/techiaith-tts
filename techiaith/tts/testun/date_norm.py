@@ -36,6 +36,12 @@ known_years = {
 
 
 def _expand_date_welsh(match):
+    # TODO: Ychwanegu pob mis i xx/xx/xx
+    # TODO: Trin yn + nnnn fel blwyddyn o fewn cyfnod penodol?
+    # TODO: ym + 19xxx = ym mil naw x x
+    # TODO: yn + 2000 - 2050(?) = yn nwy fil x x
+    # TODO: Degawdau 1920au - "un naw dau ddegau" (?) 20au - "ugeiniau"
+
     date = []
     day = 0
     if match.group(1):
