@@ -3,8 +3,8 @@ Date normaliser
 """
 import re
 
-from .lookups import days, months, mutations
-from .number_norm import wordify
+from .lookups import days, months, mutations, number_dict
+from .number_norm import find_numbers
 
 _time_re = re.compile(
     r"""\b
@@ -30,6 +30,11 @@ def mutate(time_input, replacements):
     return time_input
 
 
+known_years = {
+    "2020": "dwy fil ac ugain",
+}
+
+
 def _expand_date_welsh(match):
     date = []
     day = 0
@@ -49,7 +54,29 @@ def _expand_date_welsh(match):
     elif match.group(7):
         month = int(match.group(7))
     date.append(months[month])
-    date.append(wordify(match.group(9)))
+    if match.group(9) in known_years:
+        date.append(known_years[match.group(9)])
+    else:
+        if match.group(9).startswith("20"):
+            print(match.group(9), "<")
+            date.append(find_numbers(match.group(9)))
+        else:
+            c = 0
+            for digit in match.group(9):
+                if c == 2:
+                    n_index = digit + match.group(9)[c + 1]
+                    if n_index in number_dict:
+                        new_word = number_dict[n_index]["lemma"]
+                        if new_word:
+                            if new_word == "ugain":
+                                new_word = "dau ddeg"
+                            date.append(new_word)
+                            break
+                if c == 0 and digit == "1":
+                    date.append("mil")
+                else:
+                    date.append(number_dict[digit]["lemma"])
+                c += 1
     return " ".join(date)
 
 

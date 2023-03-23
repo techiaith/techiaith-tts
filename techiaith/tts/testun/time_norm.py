@@ -70,7 +70,7 @@ def _expand_time_welsh(match: "re.Match") -> str:
         else:
             time.append("awr")
         time.append(sep)
-    past_noon = hour >= 12
+    real_hour = hour
     if hour > 12:
         hour -= 12
 
@@ -80,13 +80,20 @@ def _expand_time_welsh(match: "re.Match") -> str:
     else:
         time.append(_expand_num(hour, sep))
         am_pm = match.group(7)
-        if am_pm is None:
-            time.append("yr hwyr" if past_noon else "y bore")
-        else:
+        if am_pm is not None:
             if "h" in am_pm:
-                time.append("yr hwyr")
-            else:
-                time.append("y bore")
+                if real_hour < 12:
+                    real_hour += 12
+        # bore = 12:01am - 11:59am
+        # canol dydd = 12:00 (dydd)
+        # prynhawn = 12:01pm - 5:00pm
+        # hwyr = 5:01pm - 11:59pm
+        if real_hour < 12:
+            time.append("y bore")
+        elif 12 < real_hour < 18:
+            time.append("y prynhawn")
+        elif 17 < real_hour < 24:
+            time.append("yr hwyr")
 
     return " ".join(time)
 

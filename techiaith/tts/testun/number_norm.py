@@ -23,12 +23,34 @@ errors = [
     [" i dau", " i ddau"],
     ["un punt", "un bunt"],
     ["dwy pwynt", "dau bwynt"],
+    ["a un deg", "a deg"],
+    ["a dau deg", "ac ugain"],
+    ["dau can punt", "dau gan punt"],
+    ["un bunt", "punt"],
+    ["dwy ddeg", "dau ddeg"],
+    ["dau pwynt", "dau bwynt"],
+    ["pum ceiniog", "pump ceiniog"],
+    ["fil un deg", "fil a deg"],
 ]
 
 start_errors = [
     ["un cant", "cant"],
     ["un mil", "mil"],
     ["un miliwn", "miliwn"],
+    ["mil un cant", "mil a chant"],
+    ["tri miliwn", "tair miliwn"],
+    ["tri pedwar", "tri phedwar"],
+]
+
+end_errors = [
+    ["dau ddeg", "ugain"],
+    ["cant a un deg", "cant a deg"],
+    ["fil un deg", "fil a deg"],
+    ["cant a dau deg", "cant ac ugain"],
+    ["fil a dau deg", "fil ac ugain"],
+    ["fil dau ddeg", "fil ac ugain"],
+    ["mil dau deg", "mil ac ugain"],
+    [" a", ""],
 ]
 
 band_markers = ["", "deg", "cant"]
@@ -48,8 +70,8 @@ def find_numbers(text):
         new_numbers = wordify(new_num)
         text = text.replace(new_num, new_numbers)
     else:
-        text = wordify_and_replace(r"£\d+\.\d+m?", text)
-        text = wordify_and_replace(r"£\d+m?", text)
+        text = wordify_and_replace(r"£\d+\.\d+[mb]?", text)
+        text = wordify_and_replace(r"£\d+[mb]?", text)
         text = wordify_and_replace(r"\d+\.\d+", text)
         text = wordify_and_replace(r"\d+", text)
     return text
@@ -73,7 +95,7 @@ def wordify_and_replace(regex, text):
             text = text.replace(num, new_numbers)
             if text != new_numbers:
                 text = mutate_number(text, new_numbers)
-    text = find_replace(text, errors, False)
+    text = find_replace(text, errors, False, False)
     return text
 
 
@@ -84,8 +106,9 @@ def mutate_number(text, number):
     :param number:
     :return:
     """
+    black_list = ["miliwn"]
     next_word = text.split(number, maxsplit=1)[-1].split(maxsplit=1)
-    if next_word:
+    if next_word and next_word not in black_list:
         info = lexicon[next_word[0]]
         if "Fem" in info:
             for num in number.split(" "):
@@ -116,8 +139,12 @@ def wordify(number):
     elif "£" in number:
         money_number = number.replace("£", "")
         if "m" in number:
-            append += number_dict["m"]["lemma"] + " " + number_dict["£"]["lemma"]
+            append += number_dict["m"]["lemma"] + " o bunnoedd"
             number = money_number.replace("m", "")
+            cleaned_string = wordify(number)
+        elif "b" in number:
+            append += number_dict["b"]["lemma"] + " o bunnoedd"
+            number = money_number.replace("b", "")
             cleaned_string = wordify(number)
         else:
             if "." in money_number:
@@ -126,19 +153,17 @@ def wordify(number):
                 for num in nums:
                     cleaned_string += wordify(num)
                     if c < len(nums):
-                        cleaned_string += " " + number_dict["£"]["lemma"] + " "
+                        cleaned_string += " " + number_dict["£"]["lemma"] + " a "
                     c += 1
                 cleaned_string += " " + number_dict["c"]["lemma"] + " "
             else:
                 cleaned_string = wordify(money_number) + " " + number_dict["£"]["lemma"]
     elif "." in number:
         nums = number.split(".")
-        c = 1
-        for num in nums:
-            cleaned_string += wordify(num)
-            if c < len(nums):
-                cleaned_string += " " + number_dict["."]["lemma"] + " "
-            c += 1
+        cleaned_string += wordify(nums[0])
+        cleaned_string += " " + number_dict["."]["lemma"] + " "
+        for num in nums[1]:
+            cleaned_string += " " + number_dict[num]["lemma"] + " "
     else:
         band = []
         band_count = 0
@@ -158,6 +183,26 @@ def wordify(number):
                         word_list.append(word_integer)
                     elif len(number) == 1:
                         word_list.append(word_integer)
+                    if place_count == 1 and digit == "0":
+                        next_digit = band[place_count - 1]
+                        if next_digit and next_digit != "0":
+                            if next_digit in "1,8":
+                                word_list.append("ac")
+                            else:
+                                word_list.append("a")
+                    next_digit = band[place_count - 1]
+                    prev_digit = None
+                    if len(band) > place_count + 1:
+                        prev_digit = band[place_count + 1]
+                    if (
+                        place_count == 1
+                        and next_digit
+                        and next_digit == "0"
+                        and prev_digit
+                        and prev_digit != "0"
+                    ):
+                        if len(word_list) > 0:
+                            word_list.append("a")
                     place_count += 1
                 band = []
         clean_words = []
@@ -166,9 +211,10 @@ def wordify(number):
                 clean_words.append(word + " ")
         cleaned_string = " ".join(clean_words)
     cleaned_string = cleaned_string.replace("  ", " ")
-    cleaned_string = find_replace(cleaned_string, errors, False)
-    cleaned_string = find_replace(cleaned_string, start_errors, True)
-    cleaned_string = find_replace(cleaned_string, mutations, False)
+    cleaned_string = find_replace(cleaned_string, errors, False, False)
+    cleaned_string = find_replace(cleaned_string, start_errors, True, False)
+    cleaned_string = find_replace(cleaned_string, end_errors, False, True)
+    cleaned_string = find_replace(cleaned_string, mutations, False, False)
     if append != " ":
         cleaned_string += append
     cleaned_string = cleaned_string.strip()
@@ -191,18 +237,25 @@ def is_mobile(word_number):
     return False, ""
 
 
-def find_replace(word_number, black_list, strats_with):
+def find_replace(word_number, black_list, strats_with, ends_with):
     """
     Find and replace words from a list
     :param word_number:
     :param black_list:
     :param strats_with:
+    :param ends_with:
     :return:
     """
-    for replacement in black_list:
-        word_number = word_number.replace(replacement[0], replacement[1])
-    if strats_with:
+    word_number = word_number.rstrip()
+    if not strats_with and not ends_with:
+        for replacement in black_list:
+            word_number = word_number.replace(replacement[0], replacement[1])
+    elif strats_with:
         for error in black_list:
             if word_number.startswith(error[0]):
-                word_number = word_number.replace(error[0], error[1])
+                word_number = word_number.replace(error[0], error[1], 1)
+    elif ends_with:
+        for error in black_list:
+            if word_number.endswith(error[0]):
+                word_number = word_number[::-1].replace(error[0][::-1], error[1][::-1], 1)[::-1]
     return word_number
