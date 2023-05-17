@@ -9,6 +9,8 @@ Semantic Versioning.
 
 ## Unreleased
 
+## [v0.1.2](https://github.com/str20tbl/techiaith-tts/releases/tag/v0.1.2) - 2023-05-17
+
 ## [v0.1.1](https://github.com/str20tbl/techiaith-tts/releases/tag/v0.1.1) - 2023-03-23
 
 ## [v0.1.0](https://github.com/str20tbl/techiaith-tts/releases/tag/v0.1.0) - 2023-03-20
