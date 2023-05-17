@@ -18,7 +18,7 @@ from datetime import datetime
 
 sys.path.insert(0, os.path.abspath("../../"))
 
-from techiaith import VERSION, VERSION_SHORT  # noqa: E402
+from techiaith.version import VERSION, VERSION_SHORT  # noqa: E402
 
 # -- Project information -----------------------------------------------------
 
