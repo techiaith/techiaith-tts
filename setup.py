@@ -1,4 +1,4 @@
-from setuptools import find_packages, setup
+from setuptools import find_namespace_packages, setup
 
 
 def read_requirements(filename: str):
@@ -15,7 +15,7 @@ def read_requirements(filename: str):
 # version.py defines the VERSION and VERSION_SHORT variables.
 # We use exec here so we don't import cached_path whilst setting up.
 VERSION = {}  # type: ignore
-with open("techiaith/version.py", "r") as version_file:
+with open("src/techiaith/version.py", "r") as version_file:
     exec(version_file.read(), VERSION)
 
 setup(
@@ -32,13 +32,15 @@ setup(
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
     keywords="",
-    url="https://github.com/str20tbl/techiaith-tts",
+    url="https://github.com/techiaith/techiaith-tts",
     author="Allen Institute for Artificial Intelligence",
     author_email="contact@allenai.org",
     license="Apache",
-    packages=find_packages(
-        exclude=["*.tests", "*.tests.*", "tests.*", "tests"],
-    ),
+#    packages=find_packages(
+#        exclude=["*.tests", "*.tests.*", "tests.*", "tests"],
+#    ),
+    packages=find_namespace_packages(where='src'),
+    package_dir={"": "src"},
     package_data={"techiaith": ["py.typed"]},
     install_requires=read_requirements("requirements.txt"),
     extras_require={"dev": read_requirements("dev-requirements.txt")},
