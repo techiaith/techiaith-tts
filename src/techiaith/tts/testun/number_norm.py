@@ -109,12 +109,13 @@ def mutate_number(text, number):
     black_list = ["miliwn"]
     next_word = text.split(number, maxsplit=1)[-1].split(maxsplit=1)
     if next_word and next_word not in black_list:
-        info = lexicon[next_word[0]]
-        if "Fem" in info:
-            for num in number.split(" "):
-                for mut in fem_mu:
-                    if mut[0] == num:
-                        text = text.replace(mut[0], mut[1])
+        if next_word[0] in lexicon:
+            info = lexicon[next_word[0]]
+            if "Fem" in info:
+                for num in number.split(" "):
+                    for mut in fem_mu:
+                        if mut[0] == num:
+                            text = text.replace(mut[0], mut[1])
     return text
 
 
