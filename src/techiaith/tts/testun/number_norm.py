@@ -31,6 +31,7 @@ errors = [
     ["dau pwynt", "dau bwynt"],
     ["pum ceiniog", "pump ceiniog"],
     ["fil un deg", "fil a deg"],
+    ["gant punt", "gan punt"],
 ]
 
 start_errors = [
@@ -108,7 +109,7 @@ def mutate_number(text, number):
     """
     black_list = ["miliwn"]
     next_word = text.split(number, maxsplit=1)[-1].split(maxsplit=1)
-    if next_word and next_word not in black_list:
+    if next_word and next_word not in black_list and next_word[0] in lexicon:
         info = lexicon[next_word[0]]
         if "Fem" in info:
             for num in number.split(" "):
@@ -136,28 +137,6 @@ def wordify(number):
         cleaned_string = " ".join(word_list)
     elif number in number_dict:
         cleaned_string = number_dict[number]["lemma"]
-    elif "£" in number:
-        money_number = number.replace("£", "")
-        if "m" in number:
-            append += number_dict["m"]["lemma"] + " o bunnoedd"
-            number = money_number.replace("m", "")
-            cleaned_string = wordify(number)
-        elif "b" in number:
-            append += number_dict["b"]["lemma"] + " o bunnoedd"
-            number = money_number.replace("b", "")
-            cleaned_string = wordify(number)
-        else:
-            if "." in money_number:
-                nums = money_number.split(".")
-                c = 1
-                for num in nums:
-                    cleaned_string += wordify(num)
-                    if c < len(nums):
-                        cleaned_string += " " + number_dict["£"]["lemma"] + " a "
-                    c += 1
-                cleaned_string += " " + number_dict["c"]["lemma"] + " "
-            else:
-                cleaned_string = wordify(money_number) + " " + number_dict["£"]["lemma"]
     elif "." in number:
         nums = number.split(".")
         cleaned_string += wordify(nums[0])
