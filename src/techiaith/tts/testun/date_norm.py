@@ -71,8 +71,6 @@ def _expand_date_welsh(match):
 def expand_day_month(value, next_token_is_month):
     if next_token_is_month:
         return days[int(value)]
-    elif not next_token_is_month and int(value) <= 12:
-        return months[int(value)]
     else:
         return find_numbers(value)
 
@@ -103,7 +101,7 @@ def expand_year(year_string):
     if len(date) == 1:
         date = date[0].split()
     clean_date = []
-    if date[len(date)-1] not in ["deg", "mil", "fil", "miliwn"]:
+    if date[len(date) - 1] not in ["deg", "mil", "fil", "miliwn"]:
         for data in date:
             if data not in ["a", "ac"]:
                 clean_date.append(data)
@@ -117,3 +115,20 @@ def expand_date_welsh(text):
     :return:
     """
     return mutate(re.sub(_time_re, _expand_date_welsh, text), mutations)
+
+
+def find_cardinal(text):
+    """
+    Expand a cardinal to its long form
+    :param text:
+    :return:
+    """
+    number = ""
+    for c in text:
+        if c.isdigit():
+            number += c
+    number = int(number)
+    result = text
+    if number in days:
+        result = days[number]
+    return result

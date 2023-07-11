@@ -5,7 +5,7 @@ from string import punctuation
 
 import spacy
 
-from .date_norm import expand_date_welsh, expand_day_month, expand_year
+from .date_norm import expand_date_welsh, expand_day_month, expand_year, find_cardinal
 from .known_phrases import replace_phrase
 from .money import clean_money
 from .mutate import mutate_on_previous
@@ -22,7 +22,8 @@ MONEY = 394
 QUANTITY = 395
 ORDINAL = 396
 CARDINAL = 397
-entities = [CARDINAL, DATE, MONEY, ORDINAL, PERCENT, QUANTITY, TIME]
+EVENT = 387
+entities = [CARDINAL, DATE, MONEY, ORDINAL, PERCENT, QUANTITY, TIME, EVENT]
 
 parser_errors = [["pumped", "pumed"], ["£", ""]]
 
@@ -45,8 +46,9 @@ def parse_text(text):
     for t in doc:
         if c < len(doc) - 2:
             next_token = doc[c + 1]
-        # print(t, "\t", t.pos_, "\t", t.ent_type_)
-        if t.pos_ == "NUM" or t.ent_type in entities:
+        new_num = _number_from_text(t.text)
+        if t.pos_ == "NUM" or new_num != "NN" or t.ent_type in entities:
+            # print(t, "\t", t.pos_, "\t", t.ent_type_, t.ent_type)
             previous = "*"
             if previous_token:
                 previous = previous_token.text
@@ -58,6 +60,18 @@ def parse_text(text):
         c += 1
     tokens = replace_results(replacements, doc.text)
     return fix_parser_errors(" ".join(tokens))
+
+
+def _number_from_text(text):
+    number = ""
+    for c in text:
+        if c.isdigit():
+            number += c
+    try:
+        int(number)
+    except:
+        number = "NN"
+    return number
 
 
 def replace_results(replacements, text):
@@ -97,8 +111,10 @@ def find_entity(ent_type, value, previous, next_token):
     if fnd_digit:
         if ent_type == TIME:
             result = expand_time_welsh(value)
-        elif ent_type == DATE:
-            if len(value) == 4:
+        elif ent_type in [DATE, EVENT]:
+            if _is_cardinal(value):
+                result = find_cardinal(value)
+            elif len(value) == 4:
                 result = expand_year(value)
             elif len(value) <= 2:
                 result = expand_day_month(value, is_month(next_token))
@@ -120,6 +136,16 @@ def find_entity(ent_type, value, previous, next_token):
     return result
 
 
+def _is_cardinal(text):
+    fnd = False
+    cardinals = ["ed", "ydd", "ail", "af"]
+    for cardinal in cardinals:
+        if cardinal in text:
+            fnd = True
+            break
+    return fnd
+
+
 def fix_parser_errors(text):
     """
     Fix parser errors
@@ -139,6 +165,6 @@ def is_month(token):
     :param token:
     :return:
     """
-    is_month_name = token.text.lower() in "ionawr,chwefror,mawrth,ebrill,mai,mehefin,gorffennaf,awst,medi,hydref,tachwedd,rhagfyr"
-    return token.ent_type == DATE and token.pos_ != "NUM" and is_month_name
-
+    is_month_name = str(
+        token).lower() in "ionawr,chwefror,mawrth,ebrill,mai,mehefin,gorffennaf,awst,medi,hydref,tachwedd,rhagfyr"
+    return is_month_name

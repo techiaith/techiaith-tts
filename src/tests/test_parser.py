@@ -1,7 +1,7 @@
 """
 Test parser
 """
-from techiaith.tts.testun.parser import parse_text
+from techiaith.tts.testun.normaliser import parse_text
 
 tests = [
     ["""mae gen i 12 y cant o'r arian""", """mae gen i ddeuddeg y cant o'r arian"""],
@@ -50,7 +50,7 @@ tests = [
         """Treth Trafodiadau Tir: Dim treth ar brynu cartrefi am lai na £225,000.""",
         """Treth Trafodiadau Tir: Dim treth ar brynu cartrefi am lai na ddau gant dau ddeg pum mil punt.""",
     ],
-    ["""Y dyddiad yw'r 1af o Fawrth.""", """Y dyddiad yw'r 1af o Fawrth."""],
+    ["""Y dyddiad yw'r 1af o Fawrth.""", """Y dyddiad yw'r cyntaf o Fawrth."""],
     [
         """Bydd Cymru’n herio Bosnia-Herzegovina yn Stadiwm Dinas Caerdydd ddydd Iau (Hydref 6) – gyda’r gic gyntaf am 7:15 y nos.""",
         """Bydd Cymru’n herio Bosnia-Herzegovina yn Stadiwm Dinas Caerdydd ddydd Iau (Hydref chwech) – gyda’r gic gyntaf am chwarter awr wedi saith y nos.""",
