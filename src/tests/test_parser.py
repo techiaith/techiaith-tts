@@ -57,19 +57,19 @@ tests = [
     ],
     [
         """“A fedrwn ni fod yn fwy gobeithiol na Saunders Lewis yn 1962? Yn sicr ni allwn fforddio anobeithio,” medd Dafydd Morgan Lewis, y golygydd.""",
-        """“A fedrwn ni fod yn fwy gobeithiol na Saunders Lewis yn 1962? Yn sicr ni allwn fforddio anobeithio,” medd Dafydd Morgan Lewis, y golygydd.""",
+        """“A fedrwn ni fod yn fwy gobeithiol na Saunders Lewis yn mil naw chwech dau? Yn sicr ni allwn fforddio anobeithio,” medd Dafydd Morgan Lewis, y golygydd.""",
     ],
     [
         """Neithiwr, roedd y tymheredd yn 20.5 gradd selsiws yn Aberporth yng Ngheredigion, gan dorri’r record flaenorol o 18.9 gradd selsiws yn y Rhyl yn 1949.""",
-        """Neithiwr, roedd y tymheredd yn ugain pwynt pump gradd selsiws yn Aberporth yng Ngheredigion, gan dorri’r record flaenorol o un deg wyth pwynt naw gradd selsiws yn y Rhyl yn 1949.""",
+        """Neithiwr, roedd y tymheredd yn ugain pwynt pump gradd selsiws yn Aberporth yng Ngheredigion, gan dorri’r record flaenorol o un deg wyth pwynt naw gradd selsiws yn y Rhyl yn mil naw pedwar naw.""",
     ],
     [
         """Bydd y trên nesaf sy'n cyrraedd platfform 2 yn gadael am Sanclêr am 4:35yp.""",
-        """Bydd y trên nesaf sy'n cyrraedd platfform dau yn gadael am Sanclêr am 4:35yp.""",
+        """Bydd y trên nesaf sy'n cyrraedd platfform dau yn gadael am Sanclêr am pump munud ar hugain i bump.""",
     ],
     [
         """Sefyllfa'r GIG 'ar ei waethaf' ers 25 mlynedd.""",
-        """Sefyllfa'r GIG 'ar ei waethaf' ers 25 mlynedd.""",
+        """Sefyllfa'r GIG 'ar ei waethaf' ers dau ddeg pump mlynedd.""",
     ],
     [
         """Daw rhybudd undeb BMA Cymru wedi i weithiwr gwyno am brinder staff a morâl isel mewn un bwrdd iechyd.""",
@@ -89,7 +89,7 @@ tests = [
     ],
     [
         """Yn ogystal, nid ydym yn argymell cymariaethau rhwng yr amcangyfrifon cysgu allan o'r casgliad misol hwn a'r cyfrif blynyddol o gysgu allan (hyd at fis Tachwedd 2019). Yn y casgliad misol hwn, gofynnir i awdurdodau lleol seilio eu hamcangyfrifon ar ddeallusrwydd lleol. Mae gan y cyfrif blynyddol o gysgu allan fethodoleg wahanol: ymarfer casglu gwybodaeth dwy wythnos, ac yna cyfrif ciplun un noson.""",
-        """Yn ogystal, nid ydym yn argymell cymariaethau rhwng yr amcangyfrifon cysgu allan o'r casgliad misol hwn a'r cyfrif blynyddol o gysgu allan (hyd at fis Tachwedd 2019). Yn y casgliad misol hwn, gofynnir i awdurdodau lleol seilio eu hamcangyfrifon ar ddeallusrwydd lleol. Mae gan y cyfrif blynyddol o gysgu allan fethodoleg wahanol: ymarfer casglu gwybodaeth dwy wythnos, ac yna cyfrif ciplun un noson.""",
+        """Yn ogystal, nid ydym yn argymell cymariaethau rhwng yr amcangyfrifon cysgu allan o'r casgliad misol hwn a'r cyfrif blynyddol o gysgu allan (hyd at fis Tachwedd dwy fil un deg naw). Yn y casgliad misol hwn, gofynnir i awdurdodau lleol seilio eu hamcangyfrifon ar ddeallusrwydd lleol. Mae gan y cyfrif blynyddol o gysgu allan fethodoleg wahanol: ymarfer casglu gwybodaeth dwy wythnos, ac yna cyfrif ciplun un noson.""",
     ],
     [
         """Nid i ni, O Arglwydd, nid i ni, Ond i’th enw dy hun, rho ogoniant, Er mwyn dy gariad a’th ffyddlondeb. Pam y mae’r cenhedloedd yn dweud, “Ble mae eu Duw?” Y mae ein Duw ni yn y nefoedd; Fe wna beth bynnag a ddymuna.""",
@@ -97,7 +97,7 @@ tests = [
     ],
     [
         """Mae'r Mesur hwn, a basiwyd gan Gynulliad Cenedlaethol Cymru ar 7 Rhagfyr 2010 ac a gymeradwywyd gan Ei Mawrhydi yn Ei Chyngor ar 9 Chwefror 2011, yn deddfu'r darpariaethau a ganlyn:""",
-        """Mae'r Mesur hwn, a basiwyd gan Gynulliad Cenedlaethol Cymru ar 7 Rhagfyr 2010 ac a gymeradwywyd gan Ei Mawrhydi yn Ei Chyngor ar 9 Chwefror 2011, yn deddfu'r darpariaethau a ganlyn:""",
+        """Mae'r Mesur hwn, a basiwyd gan Gynulliad Cenedlaethol Cymru ar seithfed Rhagfyr dwy fil a ddeg ac a gymeradwywyd gan Ei Mawrhydi yn Ei Chyngor ar nawfed Chwefror dwy fil un deg un, yn deddfu'r darpariaethau a ganlyn:""",
     ],
     ["""Helo a chroeso i'r podlediad Am Blant.""", """Helo a chroeso i'r podlediad Am Blant."""],
     ["""Oce, pnawn da pawb.""", """Oce, pnawn da pawb."""],
