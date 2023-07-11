@@ -14,7 +14,7 @@ errors = [
     ["chwe punt", "chwe phunt"],
     ["saith punt", "saith bunt"],
     ["wyth punt", "wyth bunt"],
-    ["un deg dim", "deg"],
+    ["un deg dim", "un deg"],
     ["un deg mil", "deg mil"],
     ["un deg miliwn", "deg miliwn"],
     [" dim cant", ""],
@@ -23,15 +23,14 @@ errors = [
     [" i dau", " i ddau"],
     ["un punt", "un bunt"],
     ["dwy pwynt", "dau bwynt"],
-    ["a un deg", "a deg"],
     ["a dau deg", "ac ugain"],
     ["dau can punt", "dau gan punt"],
     ["un bunt", "punt"],
     ["dwy ddeg", "dau ddeg"],
     ["dau pwynt", "dau bwynt"],
     ["pum ceiniog", "pump ceiniog"],
-    ["fil un deg", "fil a deg"],
     ["gant punt", "gan punt"],
+    ["fil un deg", "fil ac un deg"]
 ]
 
 start_errors = [
@@ -52,6 +51,10 @@ end_errors = [
     ["fil dau ddeg", "fil ac ugain"],
     ["mil dau deg", "mil ac ugain"],
     [" a", ""],
+    ["a un deg", "a deg"],
+    ["a un deg", "a deg"],
+    ["fil un deg", "fil a deg"],
+    ["fil ugain", "fil ac ugain"],
 ]
 
 band_markers = ["", "deg", "cant"]
@@ -162,7 +165,7 @@ def wordify(number):
                         word_list.append(word_integer)
                     elif len(number) == 1:
                         word_list.append(word_integer)
-                    if place_count == 1 and digit == "0":
+                    if place_count == 1 and digit in ["0", "10", "100"]:
                         next_digit = band[place_count - 1]
                         if next_digit and next_digit != "0":
                             if next_digit in "1,8":
@@ -192,8 +195,8 @@ def wordify(number):
     cleaned_string = cleaned_string.replace("  ", " ")
     cleaned_string = find_replace(cleaned_string, errors, False, False)
     cleaned_string = find_replace(cleaned_string, start_errors, True, False)
-    cleaned_string = find_replace(cleaned_string, end_errors, False, True)
     cleaned_string = find_replace(cleaned_string, mutations, False, False)
+    cleaned_string = find_replace(cleaned_string, end_errors, False, True)
     if append != " ":
         cleaned_string += append
     cleaned_string = cleaned_string.strip()

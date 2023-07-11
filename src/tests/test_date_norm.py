@@ -14,7 +14,7 @@ tests = [
     ["5/5/1995", "pumed o Fai mil naw naw pump"],
     ["15/06/2021", "pymthegfed o Fehefin dwy fil dau ddeg un"],
     ["31/7/2000", "tri deg un o Orffennaf dwy fil"],
-    ["25/8/2010", "pumed ar hugain o Awst dwy fil a deg"],
+    ["25/8/2010", "pumed ar hugain o Awst dwy fil a ddeg"],
     ["6/9/1999", "chweched o Fedi mil naw naw naw"],
     ["01/10/1920", "cyntaf o Hydref mil naw dau ddeg"],
     ["9/11/2024", "nawfed o Dachwedd dwy fil dau ddeg pedwar"],
