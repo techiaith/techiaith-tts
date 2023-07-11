@@ -27,6 +27,9 @@ def clean_money(number, append):
             nums = money_number.split(".")
             c = 1
             for num in nums:
+                if c == 2:
+                    if len(num) == 1:
+                        num += "0"
                 cleaned_string += find_numbers(num)
                 if c < len(nums):
                     cleaned_string += " " + number_dict["£"]["lemma"] + " a "

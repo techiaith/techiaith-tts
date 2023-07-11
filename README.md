@@ -21,6 +21,40 @@ Getting started:
   * Unreleased
 
 
+Installation
+============
+
+### Installing with "pip"
+```shell
+pip install techiaith-tts
+```
+
+### Installing from source
+```shell
+git clone https://github.com/techiaith/techiaith-tts.git
+cd techiaith-tts
+pip install -e .
+```
+
+Overview
+========
+### Usage
+#### normaliser_test.py
+```python
+from techiaith.tts.testun.normaliser import parse_text
+
+while True:
+  text = input("prompt: ") 
+  clean_text = parse_text(text)
+  print(clean_text)
+```
+#### output
+```shell
+python normaliser_test.py
+prompt: "Y dyddiad heddiw ydi'r 1af Ionawr 2023" 
+Y testun cyntaf i lefaru
+```
+
 Team
 ====
 
