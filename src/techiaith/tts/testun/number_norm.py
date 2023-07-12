@@ -30,7 +30,7 @@ errors = [
     ["dau pwynt", "dau bwynt"],
     ["pum ceiniog", "pump ceiniog"],
     ["gant punt", "gan punt"],
-    ["fil un deg", "fil ac un deg"]
+    ["fil un deg", "fil ac un deg"],
 ]
 
 start_errors = [

@@ -165,6 +165,8 @@ def is_month(token):
     :param token:
     :return:
     """
-    is_month_name = str(
-        token).lower() in "ionawr,chwefror,mawrth,ebrill,mai,mehefin,gorffennaf,awst,medi,hydref,tachwedd,rhagfyr"
+    is_month_name = (
+        str(token).lower()
+        in "ionawr,chwefror,mawrth,ebrill,mai,mehefin,gorffennaf,awst,medi,hydref,tachwedd,rhagfyr"
+    )
     return is_month_name
