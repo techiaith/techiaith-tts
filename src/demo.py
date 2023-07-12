@@ -17,11 +17,10 @@ def _parse_user_input():
     while True:
         text = input("\nprompt: ")
         clean_text = parse_text(text)
-        print("\nresult: ", clean_text)
+        print("\nresult:", clean_text)
         if clean_text == "exit":
             break
 
 
 if __name__ == "__main__":
     _parse_user_input()
-

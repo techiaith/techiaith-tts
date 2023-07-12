@@ -1,8 +1,8 @@
 """
 Parse monitory values
 """
-from .number_norm import find_numbers, find_replace, errors
-from .lookups import number_dict, fem_mu
+from .lookups import fem_mu, number_dict
+from .number_norm import errors, find_numbers, find_replace
 
 
 def clean_money(number, append):
