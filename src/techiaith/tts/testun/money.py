@@ -39,7 +39,7 @@ def clean_money(number, append):
             cleaned_string = find_numbers(money_number) + " " + number_dict["£"]["lemma"]
     if "punt" in cleaned_string:
         for mut in fem_mu:
-            if mut[0] in cleaned_string:
+            if not cleaned_string.startswith("un deg") and mut[0] in cleaned_string:
                 cleaned_string = cleaned_string.replace(mut[0], mut[1])
     cleaned_string = find_replace(cleaned_string, errors, False, False)
     return cleaned_string

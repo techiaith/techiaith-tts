@@ -25,7 +25,7 @@ CARDINAL = 397
 EVENT = 387
 entities = [CARDINAL, DATE, MONEY, ORDINAL, PERCENT, QUANTITY, TIME, EVENT]
 
-parser_errors = [["pumped", "pumed"], ["£", ""]]
+parser_errors = [["pumped", "pumed"], ["£", ""], [" .", "."]]
 
 
 def parse_text(text):
@@ -39,27 +39,28 @@ def parse_text(text):
     text = expand_date_welsh(text)
     text = expand_time_welsh(text)
     doc = nlp(text)
-    replacements = []
-    previous_token = {}
+    previous_token = ""
     next_token = {}
+    tokens = []
     c = 0
     for t in doc:
         if c < len(doc) - 2:
             next_token = doc[c + 1]
-        new_num = _number_from_text(t.text)
-        if t.pos_ == "NUM" or new_num != "NN" or t.ent_type in entities:
+        text = t.text_with_ws
+        new_num = _number_from_text(text)
+        if new_num != "NN" and (t.pos_ == "NUM" or t.ent_type in entities):
             # print(t, "\t", t.pos_, "\t", t.ent_type_, t.ent_type)
-            previous = "*"
-            if previous_token:
-                previous = previous_token.text
-            entity = find_entity(t.ent_type, t.text, previous, next_token)
+            entity = find_entity(t.ent_type, text, previous_token, next_token)
             if len(entity) > 0 and not t.text == entity:
-                replacements.append([t.text, entity])
+                tokens.append(entity)
+            else:
+                tokens.append(text)
+        else:
+            tokens.append(text)
         if t.text.isalnum():
-            previous_token = t
+            previous_token = text
         c += 1
-    tokens = replace_results(replacements, doc.text)
-    return fix_parser_errors(" ".join(tokens))
+    return fix_parser_errors("".join(tokens)).strip()
 
 
 def _number_from_text(text):
@@ -104,6 +105,7 @@ def find_entity(ent_type, value, previous, next_token):
     """
     fnd_digit = False
     result = ""
+    has_white_space = value[len(value) - 1] == " "
     for c in value:
         if c.isdigit() or not c.isalnum():
             fnd_digit = True
@@ -130,9 +132,13 @@ def find_entity(ent_type, value, previous, next_token):
                 result = clean_money(value, "")
         else:
             result = find_numbers(value)
+        if len(previous) > 1:
+            previous = previous.strip()
         result = mutate_on_previous(result, previous[len(previous) - 1])
     else:
         result = value
+    if len(result) > 1 and result[len(result) - 1] != " " and has_white_space:
+        result += " "
     return result
 
 

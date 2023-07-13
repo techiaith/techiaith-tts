@@ -150,5 +150,6 @@ tests = [
 
 def test_parser():
     for text in tests:
+        print(text)
         result = parse_text(text[0])
         assert result == text[1]

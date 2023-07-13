@@ -127,7 +127,8 @@ def find_cardinal(text):
     for c in text:
         if c.isdigit():
             number += c
-    number = int(number)
+    if len(number) > 0:
+        number = int(number)
     result = text
     if number in days:
         result = days[number]
