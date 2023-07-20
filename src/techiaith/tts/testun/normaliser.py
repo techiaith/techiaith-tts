@@ -122,6 +122,8 @@ def find_entity(ent_type, value, previous, next_token):
                 result = expand_day_month(value, is_month(next_token))
             else:
                 result = expand_date_welsh(value)
+            if result == value:
+                result = find_numbers(value)
         elif ent_type == CARDINAL or ent_type == PERCENT or ent_type == QUANTITY:
             result = find_numbers(value)
         elif ent_type == ORDINAL:
@@ -134,7 +136,8 @@ def find_entity(ent_type, value, previous, next_token):
             result = find_numbers(value)
         if len(previous) > 1:
             previous = previous.strip()
-        result = mutate_on_previous(result, previous[len(previous) - 1])
+        if len(previous) > 0:
+            result = mutate_on_previous(result, previous[len(previous) - 1])
     else:
         result = value
     if len(result) > 1 and result[len(result) - 1] != " " and has_white_space:

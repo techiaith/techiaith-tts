@@ -5,7 +5,6 @@ from techiaith.tts.testun.normaliser import parse_text
 
 
 def _parse_user_input():
-    history = []
     while True:
         text = input("\nprompt: ")
         if text in ["exit", "cau"]:

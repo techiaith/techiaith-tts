@@ -127,6 +127,7 @@ def wordify(number):
     convert a digit in string form into word form
     :param number:
     :return:
+    23980 08932 [089, 32]
     """
     word_list = []
     cleaned_string = ""
@@ -177,11 +178,11 @@ def wordify(number):
                     if len(band) > place_count + 1:
                         prev_digit = band[place_count + 1]
                     if (
-                        place_count == 1
-                        and next_digit
-                        and next_digit == "0"
-                        and prev_digit
-                        and prev_digit != "0"
+                            place_count == 1
+                            and next_digit
+                            and next_digit == "0"
+                            and prev_digit
+                            and prev_digit != "0"
                     ):
                         if len(word_list) > 0:
                             word_list.append("a")
@@ -190,7 +191,7 @@ def wordify(number):
         clean_words = []
         for word in word_list[::-1]:
             if word != "":
-                clean_words.append(word + " ")
+                clean_words.append(word)
         cleaned_string = " ".join(clean_words)
     cleaned_string = cleaned_string.replace("  ", " ")
     cleaned_string = find_replace(cleaned_string, errors, False, False)

@@ -76,7 +76,7 @@ tests = [
     ["73693", "saith deg tri mil chwe chant naw deg tri"],
     ["10020360", "deg miliwn dau ddeg mil tri chant a chwe deg"],
     ["07984663484", "dim saith naw wyth pedwar chwech chwech tri pedwar wyth pedwar"],
-    ["079846634840", "dim saith naw wyth pedwar chwech chwech tri pedwar wyth pedwar dim"],
+    ["07984 663 4840", "dim saith naw wyth pedwar chwech chwech tri pedwar wyth pedwar dim"],
     [
         "+4479846634840",
         "plws pedwar pedwar saith naw wyth pedwar chwech chwech tri pedwar wyth pedwar dim",
