@@ -80,7 +80,7 @@ tests = [
         """Gwynedd i ymgynghori ar dreth tri chant y cant ar ail gartrefi.""",
     ],
     [
-        """'Sa ti 'di deutha fi pan o'n i'n wyth mlwydd oed fyswn i yn y Pafiliwn, yn 34, yn gwisgo ffrog a sodla' o flaen cynulleidfa o 2,000  bobl, fyswn i ddim 'di dy goelio di.""",
+        """'Sa ti 'di deutha fi pan o'n i'n wyth mlwydd oed fyswn i yn y Pafiliwn, yn 34, yn gwisgo ffrog a sodla' o flaen cynulleidfa o 2,000 bobl, fyswn i ddim 'di dy goelio di.""",
         """'Sa ti 'di deutha fi pan o'n i'n wyth mlwydd oed fyswn i yn y Pafiliwn, yn tri deg pedwar, yn gwisgo ffrog a sodla' o flaen cynulleidfa o ddwy fil bobl, fyswn i ddim 'di dy goelio di.""",
     ],
     [
@@ -97,7 +97,7 @@ tests = [
     ],
     [
         """Mae'r Mesur hwn, a basiwyd gan Gynulliad Cenedlaethol Cymru ar 7 Rhagfyr 2010 ac a gymeradwywyd gan Ei Mawrhydi yn Ei Chyngor ar 9 Chwefror 2011, yn deddfu'r darpariaethau a ganlyn:""",
-        """Mae'r Mesur hwn, a basiwyd gan Gynulliad Cenedlaethol Cymru ar seithfed Rhagfyr dwy fil a ddeg ac a gymeradwywyd gan Ei Mawrhydi yn Ei Chyngor ar nawfed Chwefror dwy fil un deg un, yn deddfu'r darpariaethau a ganlyn:""",
+        """Mae'r Mesur hwn, a basiwyd gan Gynulliad Cenedlaethol Cymru ar seithfed Rhagfyr dwy fil a deg ac a gymeradwywyd gan Ei Mawrhydi yn Ei Chyngor ar nawfed Chwefror dwy fil un deg un, yn deddfu'r darpariaethau a ganlyn:""",
     ],
     ["""Helo a chroeso i'r podlediad Am Blant.""", """Helo a chroeso i'r podlediad Am Blant."""],
     ["""Oce, pnawn da pawb.""", """Oce, pnawn da pawb."""],
@@ -130,7 +130,14 @@ tests = [
         6: 200 kg Cnau castan (defnyddiwch y rhai mewn paced os ydy’n haws), wedi eu hanerughly
         7: 275 g (Hanner jar) o domatos heulsych, gyda’r olew wedi eu draenio ac wedi eu torritorn
         8: 2 Afal, wedi eu creiddio a’u torru yn ddeisiauunks""",
-        """un: un tbsp Olew olewydd oil dau: un Winwnsyn mawr, heb groen ac wedi ei dorri yn ddeisiauiced tri: dau Moronen, heb groen ac wedi eu torri yn ddeisiauunks pedwar: dau Brigyn o seleri, heb y diweddion ac wedi eu torri yn ddeisiauiced pump: dau Clof garlleg, heb groen ac wedi eu torri’n fânpped chwech: dau gant kg Cnau castan (defnyddiwch y rhai mewn paced os ydy’n haws), wedi eu hanerughly saith: dau gant saith deg pump g (Hanner jar) o domatos heulsych, gyda’r olew wedi eu draenio ac wedi eu torritorn wyth: dau Afal, wedi eu creiddio a’u torru yn ddeisiauunks""",
+        """un: un tbsp Olew olewydd oil
+        dau: un Winwnsyn mawr, heb groen ac wedi ei dorri yn ddeisiauiced
+        tri: dau Moronen, heb groen ac wedi eu torri yn ddeisiauunks
+        pedwar: dau Brigyn o seleri, heb y diweddion ac wedi eu torri yn ddeisiauiced
+        pump: dau Clof garlleg, heb groen ac wedi eu torri’n fânpped
+        chwech: dau gant kg Cnau castan (defnyddiwch y rhai mewn paced os ydy’n haws), wedi eu hanerughly
+        saith: dau gant saith deg pump g (Hanner jar) o domatos heulsych, gyda’r olew wedi eu draenio ac wedi eu torritorn
+        wyth: dau Afal, wedi eu creiddio a’u torru yn ddeisiauunks""",
     ],
     [
         """1af: 1 tbsp Olew olewydd oil
@@ -141,7 +148,14 @@ tests = [
         6ed: 200 kg Cnau castan (defnyddiwch y rhai mewn paced os ydy’n haws), wedi eu hanerughly
         7fed: 275 g (Hanner jar) o domatos heulsych, gyda’r olew wedi eu draenio ac wedi eu torritorn
         8fed: 2 Afal, wedi eu creiddio a’u torru yn ddeisiauunks""",
-        """cyntaf: un tbsp Olew olewydd oil ail: un Winwnsyn mawr, heb groen ac wedi ei dorri yn ddeisiauiced trydydd: dau Moronen, heb groen ac wedi eu torri yn ddeisiauunks pedwerydd: dau Brigyn o seleri, heb y diweddion ac wedi eu torri yn ddeisiauiced pumed: dau Clof garlleg, heb groen ac wedi eu torri’n fânpped chweched: dau gant kg Cnau castan (defnyddiwch y rhai mewn paced os ydy’n haws), wedi eu hanerughly seithfed: dau gant saith deg pump g (Hanner jar) o domatos heulsych, gyda’r olew wedi eu draenio ac wedi eu torritorn wythfed: dau Afal, wedi eu creiddio a’u torru yn ddeisiauunks""",
+        """cyntaf: un tbsp Olew olewydd oil
+        ail: un Winwnsyn mawr, heb groen ac wedi ei dorri yn ddeisiauiced
+        trydydd: dau Moronen, heb groen ac wedi eu torri yn ddeisiauunks
+        pedwerydd: dau Brigyn o seleri, heb y diweddion ac wedi eu torri yn ddeisiauiced
+        pumed: dau Clof garlleg, heb groen ac wedi eu torri’n fânpped
+        chweched: dau gant kg Cnau castan (defnyddiwch y rhai mewn paced os ydy’n haws), wedi eu hanerughly
+        seithfed: dau gant saith deg pump g (Hanner jar) o domatos heulsych, gyda’r olew wedi eu draenio ac wedi eu torritorn
+        wythfed: dau Afal, wedi eu creiddio a’u torru yn ddeisiauunks""",
     ],
     ["mae gen i £200", "mae gen i ddau gan punt"],
     ["9/11/2024", "nawfed o Dachwedd dwy fil dau ddeg pedwar"],
@@ -150,6 +164,5 @@ tests = [
 
 def test_parser():
     for text in tests:
-        print(text)
         result = parse_text(text[0])
         assert result == text[1]
