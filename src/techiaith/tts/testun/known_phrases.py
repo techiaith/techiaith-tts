@@ -6,7 +6,7 @@ black_list = [
     ["s4c", "es pedwar ec"],
     ["S4C", "es pedwar ec"],
     ["%", " y cant"],
-    ["999", "naw naw naw"],
+    [" 999", " naw naw naw"],
     ["@", " at "],
     ["#", "hash tag "],
 ]
