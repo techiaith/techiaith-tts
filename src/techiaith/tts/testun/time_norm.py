@@ -10,10 +10,11 @@ _time_re = re.compile(
                           ((0?[0-9])|(1[0-1])|(1[2-9])|(2[0-3]))  # oriau
                           :
                           ([0-5][0-9])                            # munud
-                          \s*(y\\.b\\.|yb|yh|y\\.h\\.)? # yb/yh
+                          (\s*y\\.b\\.|\s*yb|\s*yh|\s*yp|\s*yn|\s*y\\.h\\.)? # yb/yh
                           \b""",
     re.IGNORECASE | re.X,
 )
+spacer_char = ""
 
 
 def known_times(hour):
@@ -88,20 +89,21 @@ def _expand_time_welsh(match: "re.Match") -> str:
         # canol dydd = 12:00 (dydd)
         # prynhawn = 12:01pm - 5:00pm
         # hwyr = 5:01pm - 11:59pm
-        if real_hour < 12:
-            time.append("y bore")
-        elif 12 < real_hour < 18:
+        # if real_hour < 12:
+        #     time.append("y bore")
+        if 12 < real_hour < 18:
             time.append("y prynhawn")
         elif 17 < real_hour < 24:
             time.append("yr hwyr")
-
     return " ".join(time)
 
 
 def expand_time_welsh(text: str) -> str:
     """
     expand and mutate time
+    :param spacer:
     :param text:
     :return:
     """
-    return mutate(re.sub(_time_re, _expand_time_welsh, text))
+    result = mutate(re.sub(_time_re, _expand_time_welsh, text))
+    return result
