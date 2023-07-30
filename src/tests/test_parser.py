@@ -162,7 +162,6 @@ tests = [
     ["Dwi am fynd adref cyn 12", "Dwi am fynd adref cyn deuddeg"],
 ]
 
-
 item_counting_phrases = [
     # MASC
     ["1 crys", "un crys"],
