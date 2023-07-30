@@ -88,9 +88,9 @@ def _expand_time_welsh(match: "re.Match") -> str:
         # canol dydd = 12:00 (dydd)
         # prynhawn = 12:01pm - 5:00pm
         # hwyr = 5:01pm - 11:59pm
-        if real_hour < 12:
-            time.append("y bore")
-        elif 12 < real_hour < 18:
+        # if real_hour < 12:
+        #     time.append("y bore")
+        if 12 < real_hour < 18:
             time.append("y prynhawn")
         elif 17 < real_hour < 24:
             time.append("yr hwyr")

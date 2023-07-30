@@ -1,11 +1,17 @@
 """
 Parse text using spacy to find the required normalisation
 """
+from string import punctuation
+
 import spacy
 
-from .time_norm import expand_time_welsh
 from .date_norm import expand_date_welsh
+from .known_phrases import replace_phrase
+from .money import clean_money
 from .number_norm import find_numbers
+from .ordinals import replace_ordinal
+from .time_norm import expand_time_welsh
+from .mutate import mutate_on_previous
 
 nlp = spacy.load("cy_techiaith_tag_lem_ner_lg")
 
@@ -18,6 +24,8 @@ TIME = 392
 QUANTITY = 395
 entities = [CARDINAL, DATE, MONEY, ORDINAL, PERCENT, QUANTITY, TIME]
 
+parser_errors = [["pumped", "pumed"], ["£", ""]]
+
 
 def parse_text(text):
     """
@@ -26,46 +34,88 @@ def parse_text(text):
     :param text:
     :return:
     """
+    text = replace_phrase(text)
+    text = expand_date_welsh(text)
     doc = nlp(text)
+    replacements = []
+    previous_token = {}
     for t in doc:
-        find_entity(t.ent_type, t.text)
+        # print(t, "\t", t.pos_, "\t", t.ent_type_)
+        if t.pos_ is "NUM" or t.ent_type in entities:
+            previous = "*"
+            if previous_token:
+                previous = previous_token.text
+            entity = find_entity(t.ent_type, t.text, previous)
+            if len(entity) > 0 and not t.text == entity:
+                replacements.append([t.text, entity])
+            if previous_token:
+                pass
+        if t.text.isalnum():
+            previous_token = t
+    tokens = replace_results(replacements, doc.text)
+    return fix_parser_errors(" ".join(tokens))
 
 
-def find_entity(ent_type, value):
+def replace_results(replacements, text):
+    """
+    Replace the original text with the results of the parser
+    Newid y destun gwreiddiol gyda'r calyniadau o'r parsiwr
+    :param replacements:
+    :param text:
+    :return:
+    """
+    tokens = text.split()
+    for action in replacements:
+        index = 0
+        for word in tokens:
+            if action[0] == word.strip(punctuation + "£"):
+                tokens[index] = word.replace(action[0], action[1])
+            index += 1
+    return tokens
+
+
+def find_entity(ent_type, value, previous):
     """
     Galw y function sy'n mynd gyda'r fath o endid
     Call the function associated with the entity type
     :param ent_type:
     :param value:
-    :return:
+    :return result:
     """
     fnd_digit = False
+    result = ""
     for c in value:
-        if c.isdigit():
+        if c.isdigit() or not c.isalnum():
             fnd_digit = True
             break
     if fnd_digit:
         if ent_type == TIME:
             result = expand_time_welsh(value)
-            print("TIME", value, result)
-
         elif ent_type == DATE:
             result = expand_date_welsh(value)
-            print("DATE", value, result)
-
-        elif ent_type == CARDINAL:
+        elif ent_type == CARDINAL or ent_type == PERCENT or ent_type == QUANTITY:
             result = find_numbers(value)
-            print("CARDINAL", value, result)
-
         elif ent_type == ORDINAL:
-            result = find_numbers(value)
-            print("ORDINAL", value, result)
-
+            result = replace_ordinal(value)
         elif ent_type == MONEY:
-            print("MONEY", value)
+            if value != "£":
+                value = value.replace(",", "")
+                result = clean_money(value, "")
+        else:
+            result = find_numbers(value)
+        result = mutate_on_previous(result, previous[len(previous) - 1])
+    else:
+        result = value
+    return result
 
-        elif ent_type == PERCENT:
-            print("PERCENT", value)
 
-        elif ent_type == QUANTITY:
-            print("QUANTITY", value)
+def fix_parser_errors(text):
+    """
+    Fix parser errors
+    Trwsio gwallau yn y parsio
+    :param text:
+    :return:
+    """
+    for err in parser_errors:
+        text = text.replace(err[0], err[1])
+    return text

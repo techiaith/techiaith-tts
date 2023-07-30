@@ -1,5 +1,10 @@
 """
 Date normaliser
+TODO: Ychwanegu pob mis i xx/xx/xx
+TODO: Trin yn + nnnn fel blwyddyn o fewn cyfnod penodol?
+TODO: ym + 19xxx = ym mil naw x x
+TODO: yn + 2000 - 2050(?) = yn nwy fil x x
+TODO: Degawdau 1920au - "un naw dau ddegau" (?) 20au - "ugeiniau"
 """
 import re
 
@@ -36,12 +41,6 @@ known_years = {
 
 
 def _expand_date_welsh(match):
-    # TODO: Ychwanegu pob mis i xx/xx/xx
-    # TODO: Trin yn + nnnn fel blwyddyn o fewn cyfnod penodol?
-    # TODO: ym + 19xxx = ym mil naw x x
-    # TODO: yn + 2000 - 2050(?) = yn nwy fil x x
-    # TODO: Degawdau 1920au - "un naw dau ddegau" (?) 20au - "ugeiniau"
-
     date = []
     day = 0
     if match.group(1):
@@ -64,7 +63,6 @@ def _expand_date_welsh(match):
         date.append(known_years[match.group(9)])
     else:
         if match.group(9).startswith("20"):
-            print(match.group(9), "<")
             date.append(find_numbers(match.group(9)))
         else:
             c = 0
