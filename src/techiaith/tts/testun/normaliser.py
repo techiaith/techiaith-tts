@@ -8,7 +8,7 @@ import spacy
 from .date_norm import expand_date_welsh, expand_day_month, expand_year, find_cardinal
 from .known_phrases import replace_phrase
 from .money import clean_money
-from .mutate import mutate_on_previous
+from .mutate import mutate_number, mutate_on_previous
 from .number_norm import find_numbers
 from .ordinals import replace_ordinal
 from .time_norm import expand_time_welsh
@@ -44,12 +44,11 @@ def parse_text(text):
     tokens = []
     c = 0
     for t in doc:
-        if c < len(doc) - 2:
+        if c < len(doc) - 1:
             next_token = doc[c + 1]
         text = t.text_with_ws
         new_num = _number_from_text(text)
         if new_num != "NN" and (t.pos_ == "NUM" or t.ent_type in entities):
-            # print(t, "\t", t.pos_, "\t", t.ent_type_, t.ent_type)
             entity = find_entity(t.ent_type, text, previous_token, next_token)
             if len(entity) > 0 and not t.text == entity:
                 tokens.append(entity)
@@ -57,8 +56,13 @@ def parse_text(text):
                 tokens.append(text)
         else:
             tokens.append(text)
-        if t.text.isalnum():
-            previous_token = text
+        if text == "y " and previous_token == "'":
+            previous_token = "'y"
+        elif text in ["'i ", "'w ", "'n ", "'", "n "]:
+            previous_token += text
+        else:
+            if text not in punctuation + "£":
+                previous_token = text
         c += 1
     return fix_parser_errors("".join(tokens)).strip()
 
@@ -113,6 +117,8 @@ def find_entity(ent_type, value, previous, next_token):
     if fnd_digit:
         if ent_type == TIME:
             result = expand_time_welsh(value)
+            if result == value:
+                result = find_numbers(value)
         elif ent_type in [DATE, EVENT]:
             if _is_cardinal(value):
                 result = find_cardinal(value)
@@ -126,6 +132,8 @@ def find_entity(ent_type, value, previous, next_token):
                 result = find_numbers(value)
         elif ent_type == CARDINAL or ent_type == PERCENT or ent_type == QUANTITY:
             result = find_numbers(value)
+            if next_token:
+                result = mutate_number(result, next_token.text)
         elif ent_type == ORDINAL:
             result = replace_ordinal(value)
         elif ent_type == MONEY:
@@ -134,10 +142,8 @@ def find_entity(ent_type, value, previous, next_token):
                 result = clean_money(value, "")
         else:
             result = find_numbers(value)
-        if len(previous) > 1:
-            previous = previous.strip()
         if len(previous) > 0:
-            result = mutate_on_previous(result, previous[len(previous) - 1])
+            result = mutate_on_previous(result, previous.rstrip())
     else:
         result = value
     if len(result) > 1 and result[len(result) - 1] != " " and has_white_space:
