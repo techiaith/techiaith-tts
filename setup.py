@@ -41,7 +41,7 @@ setup(
     package_data={"techiaith": ["py.typed"], "": ["*.txt"]},
     install_requires=[
         "spacy @ git+https://github.com/techiaith/spacy",
-        "cy_techiaith_tag_lem_ner_lg @ https://github.com/techiaith/spacy_cy_tag_lem_ner_lg/releases/download/23.03/cy_techiaith_tag_lem_ner_lg-0.0.1.tar.gz",
+        "cy_techiaith_tag_lem_ner_lg @ git+https://github.com/techiaith/spacy_cy_tag_lem_ner_lg/releases/download/23.03/cy_techiaith_tag_lem_ner_lg-0.0.1.tar.gz",
     ],
     extras_require={"dev": read_requirements("dev-requirements.txt")},
     python_requires=">=3.8",
