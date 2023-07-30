@@ -74,7 +74,7 @@ def _number_from_text(text):
             number += c
     try:
         int(number)
-    except:
+    except ValueError:
         number = "NN"
     return number
 

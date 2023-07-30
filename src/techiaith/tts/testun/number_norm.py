@@ -3,8 +3,6 @@ Main number normalisation
 """
 import re
 
-from numpy import number
-
 from .lexicon import build_lexicon
 from .lookups import fem_mu, mutations, number_dict
 
@@ -133,7 +131,6 @@ def wordify(number):
     append = " "
     is_mob, new_num = is_mobile(number)
     if is_mob:
-        last_char = ""
         for char in new_num:
             if char not in " ":
                 word_integer = number_dict[char]["lemma"]
@@ -177,7 +174,13 @@ def wordify(number):
                     prev_digit = None
                     if len(band) > place_count + 1:
                         prev_digit = band[place_count + 1]
-                    if place_count == 1 and next_digit and next_digit == "0" and prev_digit and prev_digit != "0":
+                    if (
+                        place_count == 1
+                        and next_digit
+                        and next_digit == "0"
+                        and prev_digit
+                        and prev_digit != "0"
+                    ):
                         if len(word_list) > 0:
                             word_list.append("a")
                     place_count += 1
@@ -204,7 +207,9 @@ def is_mobile(word_number):
     :param word_number:
     :return:
     """
-    phone_regex = "^\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}$"
+    phone_regex = (
+        "^\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}$"
+    )
     result = re.match(phone_regex, word_number)
     if result:
         if len(result.group(0)) >= 11:
