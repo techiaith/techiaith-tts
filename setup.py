@@ -40,7 +40,7 @@ setup(
     package_dir={"": "src"},
     package_data={"techiaith": ["py.typed"], "": ["*.txt"]},
     install_requires=[
-        'pycocotools @ git+https://github.com/techiaith/spacy',
+        'spacy @ git+https://github.com/techiaith/spacy',
     ],
     dependency_links=[
       "https://github.com/techiaith/spacy_cy_tag_lem_ner_lg/releases/download/23.03/cy_techiaith_tag_lem_ner_lg-0.0.1.tar.gz",

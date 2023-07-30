@@ -40,4 +40,3 @@ sphinx-autodoc-typehints
 
 # For parsing and comparing version numbers.
 packaging
-pycocotools
