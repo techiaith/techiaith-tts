@@ -3,6 +3,8 @@ Main number normalisation
 """
 import re
 
+from numpy import number
+
 from .lexicon import build_lexicon
 from .lookups import fem_mu, mutations, number_dict
 
@@ -12,8 +14,7 @@ errors = [
     ["dwy gant", "dau gant"],
     ["dwy punt", "dwy bunt"],
     ["chwe punt", "chwe phunt"],
-    ["saith punt", "saith bunt"],
-    ["wyth punt", "wyth bunt"],
+    ["chwe chant punt", "chwe chan punt"],
     ["un deg dim", "un deg"],
     ["un deg mil", "deg mil"],
     ["un deg miliwn", "deg miliwn"],
@@ -22,15 +23,13 @@ errors = [
     [" dim mil", ""],
     [" i dau", " i ddau"],
     ["un punt", "un bunt"],
-    ["dwy pwynt", "dau bwynt"],
     ["a dau deg", "ac ugain"],
     ["dau can punt", "dau gan punt"],
     ["un bunt", "punt"],
     ["dwy ddeg", "dau ddeg"],
-    ["dau pwynt", "dau bwynt"],
-    ["pum ceiniog", "pump ceiniog"],
     ["gant punt", "gan punt"],
     ["fil un deg", "fil ac un deg"],
+    ["deunaw pwynt", "un deg wyth pwynt"],
 ]
 
 start_errors = [
@@ -134,6 +133,7 @@ def wordify(number):
     append = " "
     is_mob, new_num = is_mobile(number)
     if is_mob:
+        last_char = ""
         for char in new_num:
             if char not in " ":
                 word_integer = number_dict[char]["lemma"]
@@ -178,11 +178,11 @@ def wordify(number):
                     if len(band) > place_count + 1:
                         prev_digit = band[place_count + 1]
                     if (
-                            place_count == 1
-                            and next_digit
-                            and next_digit == "0"
-                            and prev_digit
-                            and prev_digit != "0"
+                        place_count == 1
+                        and next_digit
+                        and next_digit == "0"
+                        and prev_digit
+                        and prev_digit != "0"
                     ):
                         if len(word_list) > 0:
                             word_list.append("a")

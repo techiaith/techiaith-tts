@@ -4,6 +4,18 @@ Parse monitory values
 from .lookups import fem_mu, number_dict
 from .number_norm import errors, find_numbers, find_replace
 
+ceiniog = {
+    "1": "ceiniog",
+    "2": "dwy geiniog",
+    "3": "tair ceiniog",
+    "4": "pedair ceiniog",
+    "5": "pum ceiniog",
+    "6": "chwe cheiniog",
+    "7": "saith ceiniog",
+    "20": "ugain ceiniog",
+    "50": "hanner can ceiniog",
+}
+
 
 def clean_money(number, append):
     """
@@ -22,6 +34,13 @@ def clean_money(number, append):
         append += number_dict["b"]["lemma"] + " o bunnoedd"
         number = money_number.replace("b", "")
         cleaned_string = find_numbers(number) + " " + append
+    elif "c" in number:
+        append += number_dict["c"]["lemma"] + " "
+        number = money_number.replace("c", "")
+        if number in ceiniog:
+            cleaned_string = ceiniog[number]
+        else:
+            cleaned_string = find_numbers(number) + " " + append
     else:
         if "." in money_number:
             nums = money_number.split(".")
