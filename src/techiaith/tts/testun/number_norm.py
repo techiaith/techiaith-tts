@@ -3,8 +3,6 @@ Main number normalisation
 """
 import re
 
-from numpy import number
-
 from .lexicon import build_lexicon
 from .lookups import fem_mu, mutations, number_dict
 
@@ -133,7 +131,6 @@ def wordify(number):
     append = " "
     is_mob, new_num = is_mobile(number)
     if is_mob:
-        last_char = ""
         for char in new_num:
             if char not in " ":
                 word_integer = number_dict[char]["lemma"]

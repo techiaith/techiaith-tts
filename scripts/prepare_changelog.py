@@ -27,7 +27,7 @@ def main():
     lines.insert(insert_index, "\n")
     lines.insert(
         insert_index + 1,
-        f"## [v{VERSION}](https://github.com/str20tbl/techiaith-tts/releases/tag/v{VERSION}) - "
+        f"## [v{VERSION}](https://github.com/techiaith/techiaith-tts/releases/tag/v{VERSION}) - "
         f"{datetime.now().strftime('%Y-%m-%d')}\n",
     )
 
