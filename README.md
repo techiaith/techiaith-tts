@@ -26,7 +26,7 @@ Installation
 
 ### Installing with "pip"
 ```shell
-pip install techiaith-tts
+pip install git+https://github.com/techiaith/techiaith-tts
 ```
 
 ### Installing from source
