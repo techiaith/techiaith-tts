@@ -5,10 +5,17 @@ from techiaith.tts.testun.normaliser import parse_text
 
 tests = [
     [
-        "Dyma'r tywydd presennol gan OpenWeatherMap ar gyfer Bangor. Mae hi'n gymylog ac mae'r tymheredd yn 16 gradd Celsius. Am 9 o'r gloch yn y bore, bydd hi'n bwrw glaw gyda'r tymheredd yn 16 gradd Celsius.",
-        "Dyma'r tywydd presennol gan Open Weather Map ar gyfer Bangor. Mae hi'n gymylog ac mae'r tymheredd yn un deg chwech gradd Celsius. Am naw o'r gloch yn y bore, bydd hi'n bwrw glaw gyda'r tymheredd yn un deg chwech gradd Celsius."
+        "Dyma'r tywydd presennol gan OpenWeatherMap ar gyfer Bangor. "
+        + "Mae hi'n gymylog ac mae'r tymheredd yn 16 gradd Celsius. "
+        + "Am 9 o'r gloch yn y bore, bydd hi'n bwrw glaw gyda'r tymheredd yn 16 gradd Celsius.",
+        "Dyma'r tywydd presennol gan Open Weather Map ar gyfer Bangor. "
+        + "Mae hi'n gymylog ac mae'r tymheredd yn un deg chwech gradd Celsius. "
+        + "Am naw o'r gloch yn y bore, bydd hi'n bwrw glaw gyda'r tymheredd yn un deg chwech gradd Celsius.",
     ],
-    ["""mae gen i 12 y cant o'r arian sef, £20""", """mae gen i ddeuddeg y cant o'r arian sef, ugain punt"""],
+    [
+        """mae gen i 12 y cant o'r arian sef, £20""",
+        """mae gen i ddeuddeg y cant o'r arian sef, ugain punt""",
+    ],
     ["""Boneddigion a boneddigesau""", """Boneddigion a boneddigesau"""],
     ["""Annwyl Syr / Madam""", """Annwyl Syr / Madam"""],
     ["""Yr eiddoch yn gywir""", """Yr eiddoch yn gywir"""],
