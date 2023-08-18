@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dff69ee7-03fa-4da4-9a53-0fecbb168f5f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/techiaith/tts/testun/known_phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/tts/testun/known_phrases.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test_parser.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +49,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
-    "last_opened_file_path": "/Users/str20tbl/github/techiaith/techiaith-tts/src",
+    "last_opened_file_path": "/Users/str20tbl/Code/github/techiaith/techiaith-tts",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -93,6 +95,7 @@
       <workItem from="1690365965037" duration="1821000" />
       <workItem from="1690715991951" duration="21207000" />
       <workItem from="1690796864865" duration="1191000" />
+      <workItem from="1692365916095" duration="668000" />
     </task>
     <servers />
   </component>
