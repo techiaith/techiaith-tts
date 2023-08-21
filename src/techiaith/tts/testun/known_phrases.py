@@ -10,6 +10,7 @@ black_list = [
     ["@", " at "],
     ["#", "hash tag "],
     ["OpenWeatherMap", "Open Weather Map"],
+    ["openweathermap", "open weather map"],
 ]
 
 
