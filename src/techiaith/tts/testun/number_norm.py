@@ -71,8 +71,8 @@ def find_numbers(text):
         new_numbers = wordify(new_num)
         text = text.replace(new_num, new_numbers)
     else:
-        text = wordify_and_replace(r"£\d+\.\d+[mb]?", text)
-        text = wordify_and_replace(r"£\d+[mb]?", text)
+        text = wordify_and_replace(r"[£$€]{1}\d+\.\d+[mb]?", text)
+        text = wordify_and_replace(r"[£$€]{1}\d+[mb]?", text)
         text = wordify_and_replace(r"\d+\.\d+[m]?", text)
         text = wordify_and_replace(r"\d+[m]?", text)
     return text

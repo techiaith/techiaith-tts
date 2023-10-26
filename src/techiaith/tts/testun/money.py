@@ -24,7 +24,12 @@ def clean_money(number, append):
     :param append:
     :return:
     """
-    money_number = number.replace("£", "")
+    money_sign = "£"
+    if "$" in number:
+        money_sign = "$"
+    if "€" in number:
+        money_sign = "€"
+    money_number = number.replace(money_sign, "")
     cleaned_string = ""
     if "m" in number:
         append += number_dict["m"]["lemma"] + " o bunnoedd"
@@ -51,14 +56,14 @@ def clean_money(number, append):
                         num += "0"
                 cleaned_string += find_numbers(num)
                 if c < len(nums):
-                    cleaned_string += " " + number_dict["£"]["lemma"] + " a "
+                    cleaned_string += " " + number_dict[money_sign]["lemma"] + " a "
                 c += 1
             cleaned_string += " " + number_dict["c"]["lemma"] + " "
         else:
-            cleaned_string = find_numbers(money_number) + " " + number_dict["£"]["lemma"]
-    if "punt" in cleaned_string:
-        for mut in fem_mu:
-            if not cleaned_string.startswith("un deg") and mut[0] in cleaned_string:
-                cleaned_string = cleaned_string.replace(mut[0], mut[1])
+            cleaned_string = find_numbers(money_number) + " " + number_dict[money_sign]["lemma"]
+    # if "punt" in cleaned_string:
+    #     for mut in fem_mu:
+    #         if not cleaned_string.startswith("un deg") and mut[0] in cleaned_string:
+    #             cleaned_string = cleaned_string.replace(mut[0], mut[1])
     cleaned_string = find_replace(cleaned_string, errors, False, False)
     return cleaned_string
