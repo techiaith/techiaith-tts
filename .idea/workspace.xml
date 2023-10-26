@@ -7,9 +7,7 @@
     <list default="true" id="dff69ee7-03fa-4da4-9a53-0fecbb168f5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/techiaith/tts/testun/known_phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/tts/testun/known_phrases.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techiaith/tts/testun/lookups.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/tts/testun/lookups.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techiaith/tts/testun/number_norm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/tts/testun/number_norm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techiaith/tts/testun/time_norm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/tts/testun/time_norm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/techiaith/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/version.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +101,7 @@
       <workItem from="1690796864865" duration="1191000" />
       <workItem from="1692365916095" duration="1572000" />
       <workItem from="1692624448331" duration="227000" />
-      <workItem from="1698304323873" duration="3839000" />
+      <workItem from="1698304323873" duration="5047000" />
     </task>
     <servers />
   </component>
