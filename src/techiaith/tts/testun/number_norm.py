@@ -208,7 +208,7 @@ def is_mobile(word_number):
     :return:
     """
     phone_regex = (
-        "^\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}$"
+        "^\\+?\\d{1,2}?\\s?\\(?\\d{1,5}?\\)?[-.\\s]?\\d{1,6}[-.\\s]?\\d{1,6}[-.\\s]?\\d{1,11}$"
     )
     result = re.match(phone_regex, word_number)
     if result:

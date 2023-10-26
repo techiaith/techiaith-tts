@@ -107,6 +107,8 @@ number_dict = {
     "-": {"lemma": "minws"},
     ".": {"lemma": "pwynt"},
     "£": {"lemma": "punt"},
+    "€": {"lemma": "ewro"},
+    "$": {"lemma": "ddoler"},
     "c": {"lemma": "ceiniog"},
     "0": {"lemma": "dim"},
     "1": {"lemma": "un"},
