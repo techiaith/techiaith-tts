@@ -19,7 +19,11 @@ black_list = [
     ["Mr.", "mistyr"],
     ["Ms.", "misus"],
     ["Mrs.", "mizz"],
-    ["Dr.", "doctor"],
+    ["Dr.", " doctor "],
+    [" Mr ", " mistyr "],
+    [" Ms ", " misus "],
+    [" Mrs ", " mizz "],
+    [" Dr ", "doctor"],
     ["Parch.", "parchedig"],
     ["Capt.", "capten"],
 ]
