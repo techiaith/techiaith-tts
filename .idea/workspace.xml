@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dff69ee7-03fa-4da4-9a53-0fecbb168f5f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techiaith/tts/testun/known_phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/tts/testun/known_phrases.py" afterDir="false" />
-    </list>
+    <list default="true" id="dff69ee7-03fa-4da4-9a53-0fecbb168f5f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +98,7 @@
       <workItem from="1692365916095" duration="1572000" />
       <workItem from="1692624448331" duration="227000" />
       <workItem from="1698304323873" duration="7557000" />
-      <workItem from="1698418523203" duration="501000" />
+      <workItem from="1698418523203" duration="1032000" />
     </task>
     <servers />
   </component>
