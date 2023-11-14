@@ -82,7 +82,8 @@ dorri’r record flaenorol o un deg wyth pwynt naw gradd selsiws yn y Rhyl yn fi
     ],
     [
         """Bydd y trên nesaf sy'n cyrraedd platfform 2 yn gadael am Sanclêr am 4:35yp.""",
-        """Bydd y trên nesaf sy'n cyrraedd platfform dau yn gadael am Sanclêr am pump munud ar hugain i bump y bore.""",
+        """Bydd y trên nesaf sy'n cyrraedd platfform dau yn gadael am Sanclêr am pump munud ar hugain i bump \
+        y bore.""",
     ],
     [
         """Sefyllfa'r GIG 'ar ei waethaf' ers 25 mlynedd.""",
