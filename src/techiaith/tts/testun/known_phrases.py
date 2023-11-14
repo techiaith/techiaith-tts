@@ -15,7 +15,7 @@ black_list = [
     ["km", " cilometr"],
     ["mm", " milomedr"],
     ["OpenWeatherMap", "Open Weather Map"],
-    ["openweathermap", "open weather map"],
+    ["openweathermap", "Open Weather Map"],
     ["Mr.", "mistyr"],
     ["Ms.", "misus"],
     ["Mrs.", "mizz"],

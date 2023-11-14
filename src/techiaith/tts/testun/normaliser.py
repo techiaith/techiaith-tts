@@ -64,7 +64,9 @@ def parse_text(text):
             if text not in punctuation + "£":
                 previous_token = text
         c += 1
-    return fix_parser_errors("".join(tokens)).strip().capitalize()
+        if len(tokens) > 0:
+            tokens[0].capitalize()
+    return fix_parser_errors("".join(tokens)).strip()
 
 
 def _number_from_text(text):
