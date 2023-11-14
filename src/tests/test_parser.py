@@ -23,8 +23,8 @@ tests = [
     ["""Hafan""", """Hafan"""],
     ["""Amdanom ni""", """Amdanom ni"""],
     ["""Cysylltu â ni""", """Cysylltu â ni"""],
-    ["""Cysylltwch â ni ar Twitter @S4C""", """Cysylltwch â ni ar Twitter at es pedwar ec"""],
-    ["""#yrawrgymraeg""", """hash tag yrawrgymraeg"""],
+    ["""Cysylltwch â ni ar Twitter @S4C""", """Cysylltwch â ni ar Twitter at Es Pedwar Ec"""],
+    ["""#yrawrgymraeg""", """hash nod yrawrgymraeg"""],
     ["""😉""", """😉"""],
     [
         """Anfonwch e-bost at: techiaith@bangor.ac.uk""",
@@ -55,7 +55,7 @@ tests = [
     ],
     [
         """Mae bin olwynion du newydd yn costio £25.""",
-        """Mae bin olwynion du newydd yn costio ddau ddeg pum punt.""",
+        """Mae bin olwynion du newydd yn costio ddau ddeg pump punt.""",
     ],
     [
         """Treth Trafodiadau Tir: Dim treth ar brynu cartrefi am lai na £225,000.""",
@@ -64,9 +64,9 @@ tests = [
     ["""Y dyddiad yw'r 1af o Fawrth.""", """Y dyddiad yw'r cyntaf o Fawrth."""],
     [
         """Bydd Cymru’n herio Bosnia-Herzegovina yn Stadiwm Dinas Caerdydd ddydd Iau (Hydref 6) – gyda’r gic \
-gyntaf am 7:15 y nos.""",
+gyntaf am 7:15yb.""",
         """Bydd Cymru’n herio Bosnia-Herzegovina yn Stadiwm Dinas Caerdydd ddydd Iau (Hydref chwech) – gyda’r \
-gic gyntaf am chwarter awr wedi saith y nos.""",
+gic gyntaf am chwarter awr wedi saith y bore.""",
     ],
     [
         """“A fedrwn ni fod yn fwy gobeithiol na Saunders Lewis yn 1962? Yn sicr ni allwn fforddio anobeithio,” \
@@ -82,7 +82,7 @@ dorri’r record flaenorol o un deg wyth pwynt naw gradd selsiws yn y Rhyl yn fi
     ],
     [
         """Bydd y trên nesaf sy'n cyrraedd platfform 2 yn gadael am Sanclêr am 4:35yp.""",
-        """Bydd y trên nesaf sy'n cyrraedd platfform dau yn gadael am Sanclêr am pump munud ar hugain i bump.""",
+        """Bydd y trên nesaf sy'n cyrraedd platfform dau yn gadael am Sanclêr am pump munud ar hugain i bump y bore.""",
     ],
     [
         """Sefyllfa'r GIG 'ar ei waethaf' ers 25 mlynedd.""",

@@ -6,8 +6,8 @@ from techiaith.tts.testun.known_phrases import replace_phrase
 # ERAILL POSIB: S4C ("es pedwar ec")
 tests = [
     ["gwefan yw golwg360", "gwefan yw golwg tri chwech dim"],
-    ["S4C", "es pedwar ec"],
-    ["@S4C", " at es pedwar ec"],
+    ["S4C", "Es Pedwar Ec"],
+    ["@S4C", " at Es Pedwar Ec"],
 ]
 
 
