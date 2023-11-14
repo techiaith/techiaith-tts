@@ -1,7 +1,7 @@
 """
 Parse monitory values
 """
-from .lookups import fem_mu, number_dict
+from .lookups import number_dict
 from .number_norm import errors, find_numbers, find_replace
 
 ceiniog = {
