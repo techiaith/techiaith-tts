@@ -96,7 +96,8 @@ def expand_year(year_string):
             if c == 0 and digit == "1":
                 date.append("mil")
             else:
-                date.append(number_dict[digit]["lemma"])
+                if digit in number_dict:
+                    date.append(number_dict[digit]["lemma"])
             c += 1
     if len(date) == 1:
         date = date[0].split()

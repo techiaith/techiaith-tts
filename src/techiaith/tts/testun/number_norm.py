@@ -143,7 +143,8 @@ def wordify(number):
         cleaned_string += wordify(nums[0])
         cleaned_string += " " + number_dict["."]["lemma"] + " "
         for num in nums[1]:
-            cleaned_string += " " + number_dict[num]["lemma"] + " "
+            if num in number_dict:
+                cleaned_string += " " + number_dict[num]["lemma"] + " "
     else:
         band = []
         band_count = 0
@@ -157,7 +158,8 @@ def wordify(number):
                 word_list.append(markers[marker_count])
                 marker_count += 1
                 for digit in band:
-                    word_integer = number_dict[digit]["lemma"]
+                    if digit in number_dict:
+                        word_integer = number_dict[digit]["lemma"]
                     if word_integer != "dim" and len(number) > 1:
                         word_list.append(band_markers[place_count])
                         word_list.append(word_integer)
