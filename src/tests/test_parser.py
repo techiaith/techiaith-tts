@@ -13,8 +13,8 @@ tests = [
         + "Am naw o'r gloch yn y bore, bydd hi'n bwrw glaw gyda'r tymheredd yn un deg chwech gradd Celsius.",
     ],
     [
-        """mae gen i 12 y cant o'r arian sef, £20""",
-        """mae gen i ddeuddeg y cant o'r arian sef, ugain punt""",
+        """Mae gen i 12 y cant o'r arian sef, £20""",
+        """Mae gen i ddeuddeg y cant o'r arian sef, ugain punt""",
     ],
     ["""Boneddigion a boneddigesau""", """Boneddigion a boneddigesau"""],
     ["""Annwyl Syr / Madam""", """Annwyl Syr / Madam"""],
@@ -24,7 +24,7 @@ tests = [
     ["""Amdanom ni""", """Amdanom ni"""],
     ["""Cysylltu â ni""", """Cysylltu â ni"""],
     ["""Cysylltwch â ni ar Twitter @S4C""", """Cysylltwch â ni ar Twitter at Es Pedwar Ec"""],
-    ["""#yrawrgymraeg""", """hash nod yrawrgymraeg"""],
+    ["""#yrawrgymraeg""", """Hash nod yrawrgymraeg"""],
     ["""😉""", """😉"""],
     [
         """Anfonwch e-bost at: techiaith@bangor.ac.uk""",
@@ -186,7 +186,7 @@ Pen Y Pier... Y Syrcas! Ond nid syrcas arferol mo hon, o na!""",
         6: 200 kg Cnau castan (defnyddiwch y rhai mewn paced os ydy’n haws), wedi eu hanerughly
         7: 275 g (Hanner jar) o domatos heulsych, gyda’r olew wedi eu draenio ac wedi eu torritorn
         8: 2 Afal, wedi eu creiddio a’u torru yn ddeisiauunks""",
-        """un: un tbsp Olew olewydd oil
+        """Un: un tbsp Olew olewydd oil
         dau: un Winwnsyn mawr, heb groen ac wedi ei dorri yn ddeisiauiced
         tri: dau Moronen, heb groen ac wedi eu torri yn ddeisiauunks
         pedwar: dau Brigyn o seleri, heb y diweddion ac wedi eu torri yn ddeisiauiced
@@ -205,7 +205,7 @@ draenio ac wedi eu torritorn
         6ed: 200 kg Cnau castan (defnyddiwch y rhai mewn paced os ydy’n haws), wedi eu hanerughly
         7fed: 275 g (Hanner jar) o domatos heulsych, gyda’r olew wedi eu draenio ac wedi eu torritorn
         8fed: 2 Afal, wedi eu creiddio a’u torru yn ddeisiauunks""",
-        """cyntaf: un tbsp Olew olewydd oil
+        """Cyntaf: un tbsp Olew olewydd oil
         ail: un Winwnsyn mawr, heb groen ac wedi ei dorri yn ddeisiauiced
         trydydd: dau Moronen, heb groen ac wedi eu torri yn ddeisiauunks
         pedwerydd: dau Brigyn o seleri, heb y diweddion ac wedi eu torri yn ddeisiauiced
@@ -215,28 +215,28 @@ draenio ac wedi eu torritorn
 draenio ac wedi eu torritorn
         wythfed: dau Afal, wedi eu creiddio a’u torru yn ddeisiauunks""",
     ],
-    ["mae gen i £200", "mae gen i ddau gan punt"],
-    ["9/11/2024", "nawfed o Dachwedd dwy fil dau ddeg pedwar"],
+    ["Mae gen i £200", "Mae gen i ddau gan punt"],
+    ["9/11/2024", "Nawfed o Dachwedd dwy fil dau ddeg pedwar"],
     ["Dwi am fynd adref cyn 12", "Dwi am fynd adref cyn deuddeg"],
 ]
 
 item_counting_phrases = [
     # MASC
-    ["1 crys", "un crys"],
-    ["2 grys", "dau grys"],
-    ["3 chrys", "tri chrys"],
-    ["4 crys", "pedwar crys"],
+    ["1 crys", "Un crys"],
+    ["2 grys", "Dau grys"],
+    ["3 chrys", "Tri chrys"],
+    ["4 crys", "Pedwar crys"],
     # FEM
-    ["1 glustog", "un glustog"],
-    ["2 glustog", "dwy glustog"],
-    ["2 gwmwl", "dau gwmwl"],
-    ["2 gadair", "dwy gadair"],
-    ["3 chwmwl", "tri chwmwl"],
-    ["3 clustog", "tair clustog"],
-    ["3 cadair", "tair cadair"],
+    ["1 glustog", "Un glustog"],
+    ["2 glustog", "Dwy glustog"],
+    ["2 gwmwl", "Dau gwmwl"],
+    ["2 gadair", "Dwy gadair"],
+    ["3 chwmwl", "Tri chwmwl"],
+    ["3 clustog", "Tair clustog"],
+    ["3 cadair", "Tair cadair"],
     # ["4 chwmwl", "pedair chwmwl"],
-    ["4 clustog", "pedair clustog"],
-    ["4 cadair", "pedair cadair"],
+    ["4 clustog", "Pedair clustog"],
+    ["4 cadair", "Pedair cadair"],
     # NOUNS
     # ["5 ci", "pum ci"],
     # ["6 chi", "chwe chi"],
@@ -247,49 +247,49 @@ item_counting_phrases = [
 
 lexically_mutated_numbers = [
     # SOFT
-    ["dyma 2 gath", "dyma ddwy gath"],
-    ["dyna 2 gath", "dyna ddwy gath"],
-    ["wele 2 gath", "wele ddwy gath"],
-    ["y 2 gath", "y ddwy gath"],
-    ["neu 2 gath", "neu ddwy gath"],
-    ["dy 2 gath", "dy ddwy gath"],
-    ["ei 2 gath", "ei ddwy gath"],
-    ["a'i 2 gath", "a'i ddwy gath"],
-    ["i'w 2 gath", "i'w ddwy gath"],
-    ["pa 2 gath?", "pa ddwy gath?"],
-    ["sut 2 gath?", "sut ddwy gath?"],
-    ["yn 2 gath", "yn ddwy gath"],  # PREDICATE ONLY - NOT AFTER PREPOSITION
+    ["dyma 2 gath", "Dyma ddwy gath"],
+    ["dyna 2 gath", "Dyna ddwy gath"],
+    ["wele 2 gath", "Wele ddwy gath"],
+    ["y 2 gath", "Y ddwy gath"],
+    ["neu 2 gath", "Neu ddwy gath"],
+    ["dy 2 gath", "Dy ddwy gath"],
+    ["ei 2 gath", "Ei ddwy gath"],
+    ["a'i 2 gath", "A'i ddwy gath"],
+    ["i'w 2 gath", "I'w ddwy gath"],
+    ["pa 2 gath?", "Pa ddwy gath?"],
+    ["sut 2 gath?", "Sut ddwy gath?"],
+    ["yn 2 gath", "Yn ddwy gath"],  # PREDICATE ONLY - NOT AFTER PREPOSITION
     ["'n 2 gath", "'n ddwy gath"],  # PREDICATE ONLY - NOT AFTER PREPOSITION
-    ["am 2 gath", "am ddwy gath"],
-    ["ar 2 gath", "ar ddwy gath"],
-    ["at 2 gath", "at ddwy gath"],
-    ["dan 2 gath", "dan ddwy gath"],
-    ["dros 2 gath", "dros ddwy gath"],
-    ["drwy 2 gath", "drwy ddwy gath"],
-    ["gan 2 gath", "gan ddwy gath"],
-    ["heb 2 gath", "heb ddwy gath"],
-    ["hyd 2 gath", "hyd ddwy gath"],
-    ["o 2 gath", "o ddwy gath"],
-    ["tros 2 gath", "tros ddwy gath"],
-    ["trwy 2 gath", "trwy ddwy gath"],
-    ["wrth 2 gath", "wrth ddwy gath"],
+    ["am 2 gath", "Am ddwy gath"],
+    ["ar 2 gath", "Ar ddwy gath"],
+    ["at 2 gath", "At ddwy gath"],
+    ["dan 2 gath", "Dan ddwy gath"],
+    ["dros 2 gath", "Dros ddwy gath"],
+    ["drwy 2 gath", "Drwy ddwy gath"],
+    ["gan 2 gath", "Gan ddwy gath"],
+    ["heb 2 gath", "Heb ddwy gath"],
+    ["hyd 2 gath", "Hyd ddwy gath"],
+    ["o 2 gath", "O ddwy gath"],
+    ["tros 2 gath", "Tros ddwy gath"],
+    ["trwy 2 gath", "Trwy ddwy gath"],
+    ["wrth 2 gath", "Wrth ddwy gath"],
     # NASAL
-    ["fy 2 gath", "fy nwy gath"],
+    ["fy 2 gath", "Fy nwy gath"],
     ["'y 2 gath", "'y nwy gath"],
     # ["yn 2 gath", "'yn nwy gath"],  # PREPOSITION ONLY - NOT AFTER PREDICATE
     # ASPIRATE
-    ["gyda 3 cath", "gyda thair cath"],
-    ["tua 3 cath", "tua thair cath"],
+    ["gyda 3 cath", "Gyda thair cath"],
+    ["tua 3 cath", "Tua thair cath"],
     # ["ei 3 cath", "ei thair cath"],
     # ["'i 3 cath", "'i thair cath"],
     # ["a 3 cath", "a thair cath"]
 ]
 
 grammatically_mutated_numbers = [
-    ["mae yna 2 gath", "mae yna ddwy gath"],
+    ["Mae yna 2 gath", "Mae yna ddwy gath"],
     [
-        "cafodd 2 gath",
-        "cafodd ddwy gath",
+        "Cafodd 2 gath",
+        "Cafodd dwy gath",
     ],  # etc. VERB + NUM = NUM MUTATES (SOFT) # not always necessary
 ]
 
