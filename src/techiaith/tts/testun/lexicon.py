@@ -11,13 +11,13 @@ def build_lexicon():
     build a dict lookup from the lexicon file
     :return:
     """
-    lex = ir.read_text(data, "lecsicon_cc0.txt")
+    lex = (ir.files(data) / "lecsicon_cc0.txt").read_text()
     lexicon = {}
     for line in lex.splitlines():
         if "Gender" in line:
             cells = line.split("\t")
             for cell in cells:
                 if "Gender" in cell:
-                    lexicon[cells[0]] = cell[cell.index("Gender") :]
+                    lexicon[cells[0]] = cell[cell.index("Gender"):]
                     break
     return lexicon

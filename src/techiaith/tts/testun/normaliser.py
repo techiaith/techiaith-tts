@@ -35,6 +35,7 @@ def parse_text(text):
     :param text:
     :return:
     """
+    original_text = text
     text = replace_phrase(text)
     text = expand_date_welsh(text)
     text = expand_time_welsh(text)
@@ -65,7 +66,11 @@ def parse_text(text):
                 previous_token = text
         c += 1
     if len(tokens) > 0:
-        tokens[0] = tokens[0].capitalize()
+        if original_text[0].isalpha() and original_text[0].isupper():
+            tokens[0] = tokens[0].capitalize()
+        elif not original_text[0].isalpha():
+            tokens[0] = tokens[0].capitalize()
+
     return fix_parser_errors("".join(tokens)).strip()
 
 
