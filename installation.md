@@ -1,7 +1,7 @@
 Installation
 ============
 
-**techiaith-tts** supports Python >= 3.8.
+**techiaith-tts** supports Python >= 3.9.
 
 ## Installing with `pip`
 

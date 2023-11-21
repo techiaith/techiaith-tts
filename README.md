@@ -33,7 +33,7 @@ pip install git+https://github.com/techiaith/techiaith-tts
 ```shell
 git clone https://github.com/techiaith/techiaith-tts.git
 cd techiaith-tts
-conda create -n techiaith-tts python=[3.8 <= x.x => 3.12]
+conda create -n techiaith-tts python=[3.9 <= x.x => 3.12]
 conda activate techiaith-tts
 pip install -r requirements.txt
 pip install -e .

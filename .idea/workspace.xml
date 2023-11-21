@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dff69ee7-03fa-4da4-9a53-0fecbb168f5f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/installation.md" beforeDir="false" afterPath="$PROJECT_DIR$/installation.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/prepare_changelog.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/prepare_changelog.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +86,7 @@
       <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems View" order="1" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.33027887" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.33027887" />
       <window_info anchor="bottom" id="Services" order="3" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="SciView" show_stripe_button="false" />
@@ -138,7 +142,7 @@
       <workItem from="1699990871282" duration="380000" />
       <workItem from="1700224399241" duration="276000" />
       <workItem from="1700467685952" duration="1900000" />
-      <workItem from="1700560897011" duration="5948000" />
+      <workItem from="1700560897011" duration="6688000" />
     </task>
     <servers />
   </component>
