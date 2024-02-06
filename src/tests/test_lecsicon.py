@@ -1,6 +1,7 @@
 """
 Test building of the lexicon
 """
+
 from techiaith.tts.testun.lexicon import build_lexicon
 
 

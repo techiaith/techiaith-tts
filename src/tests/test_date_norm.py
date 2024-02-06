@@ -1,6 +1,7 @@
 """
 Test number normaliser
 """
+
 from techiaith.tts.testun.date_norm import expand_date_welsh
 
 tests = [

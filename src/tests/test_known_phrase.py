@@ -1,6 +1,7 @@
 """
 Test known_phrases
 """
+
 from techiaith.tts.testun.known_phrases import replace_phrase
 
 # ERAILL POSIB: S4C ("es pedwar ec")

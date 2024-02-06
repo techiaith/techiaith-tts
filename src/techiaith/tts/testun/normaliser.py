@@ -1,6 +1,7 @@
 """
 Parse text using spacy to find the required normalisation
 """
+
 from string import punctuation
 
 import spacy

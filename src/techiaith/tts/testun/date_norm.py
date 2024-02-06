@@ -6,6 +6,7 @@ TODO: ym + 19xxx = ym mil naw x x
 TODO: yn + 2000 - 2050(?) = yn nwy fil x x
 TODO: Degawdau 1920au - "un naw dau ddegau" (?) 20au - "ugeiniau"
 """
+
 import re
 
 from .lookups import days, months, mutations, number_dict

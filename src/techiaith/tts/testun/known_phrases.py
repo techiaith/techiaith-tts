@@ -1,6 +1,7 @@
 """
 Script to replace known phrases in text
 """
+
 black_list = [
     ["golwg360", "golwg tri chwech dim"],
     ["s4c", "es pedwar ec"],

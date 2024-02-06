@@ -1,6 +1,7 @@
 """
 Test parser
 """
+
 from techiaith.tts.testun.normaliser import parse_text
 
 tests = [

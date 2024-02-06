@@ -1,6 +1,7 @@
 """
 Test time normalisation
 """
+
 from techiaith.tts.testun.time_norm import expand_time_welsh
 
 # bore = 12:01am - 11:59am
