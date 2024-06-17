@@ -1,4 +1,4 @@
 # Add your own dependencies to this file.
 git+https://github.com/techiaith/spacy
 https://github.com/techiaith/spacy_cy_tag_lem_ner_lg/releases/download/23.03/cy_techiaith_tag_lem_ner_lg-0.0.1.tar.gz
-numpy==1.26.4
+numpy==2.0.0
