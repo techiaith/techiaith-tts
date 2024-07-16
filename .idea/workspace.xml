@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dff69ee7-03fa-4da4-9a53-0fecbb168f5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev-requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dev-requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,27 +68,31 @@
     <layout>
       <window_info id="Space Code Reviews" show_stripe_button="false" />
       <window_info id="Bookmarks" show_stripe_button="false" side_tool="true" />
+      <window_info id="Merge Requests" show_stripe_button="false" />
       <window_info id="Commit_Guest" show_stripe_button="false" />
       <window_info id="Pull Requests" show_stripe_button="false" />
-      <window_info id="Merge Requests" show_stripe_button="false" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32983398" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32994792" />
       <window_info id="Commit" order="1" weight="0.25" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Packages" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" show_stripe_button="false" />
       <window_info anchor="bottom" id="File Transfer" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="HfCacheToolWindow" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems View" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.33027887" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.33033174" />
       <window_info anchor="bottom" id="Services" order="3" />
+      <window_info anchor="right" id="Plots" show_stripe_button="false" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
+      <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
       <window_info anchor="right" id="SciView" show_stripe_button="false" />
       <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
       <window_info anchor="right" id="Database" order="1" weight="0.25" />
+      <window_info anchor="right" id="AIAssistant" order="1" weight="0.25" />
     </layout>
   </component>
   <component name="RecentsManager">
@@ -101,7 +106,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-e8b2dc97e1a4-5ac6f1e12630-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.11555.5" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-PY-242.20224.25" />
+        <option value="bundled-python-sdk-fa459bfafed0-77d8f034812c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.20224.25" />
       </set>
     </attachedChunks>
   </component>
@@ -139,6 +145,7 @@
       <workItem from="1700224399241" duration="276000" />
       <workItem from="1700467685952" duration="1900000" />
       <workItem from="1700560897011" duration="7900000" />
+      <workItem from="1721120641004" duration="2755000" />
     </task>
     <servers />
   </component>
