@@ -10,8 +10,8 @@ tests = [
         + "Mae hi'n gymylog ac mae'r tymheredd yn 16 gradd Celsius. "
         + "Am 9 o'r gloch yn y bore, bydd hi'n bwrw glaw gyda'r tymheredd yn 16 gradd Celsius.",
         "Dyma'r tywydd presennol gan Open Weather Map ar gyfer Bangor. "
-        + "Mae hi'n gymylog ac mae'r tymheredd yn un deg chwech gradd Celsius. "
-        + "Am naw o'r gloch yn y bore, bydd hi'n bwrw glaw gyda'r tymheredd yn un deg chwech gradd Celsius.",
+        + "Mae hi'n gymylog ac mae'r tymheredd yn un deg chwech gradd Selsius. "
+        + "Am naw o'r gloch yn y bore, bydd hi'n bwrw glaw gyda'r tymheredd yn un deg chwech gradd Selsius.",
     ],
     [
         """Mae gen i 12 y cant o'r arian sef, £20""",

@@ -7,8 +7,9 @@
     <list default="true" id="dff69ee7-03fa-4da4-9a53-0fecbb168f5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/prepare_changelog.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/prepare_changelog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techiaith/tts/testun/known_phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/tts/testun/known_phrases.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/test_money_norm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test_money_norm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/techiaith/tts/testun/mutate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/tts/testun/mutate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/techiaith/tts/testun/normaliser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/tts/testun/normaliser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test_parser.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +152,7 @@
       <workItem from="1721120641004" duration="3991000" />
       <workItem from="1721658754820" duration="1456000" />
       <workItem from="1722325911703" duration="4288000" />
-      <workItem from="1722450968819" duration="3946000" />
+      <workItem from="1722450968819" duration="5660000" />
     </task>
     <servers />
   </component>

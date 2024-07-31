@@ -36,6 +36,7 @@ def parse_text(text):
     :param text:
     :return:
     """
+    print(text)
     original_text = text
     text = replace_phrase(text)
     text = expand_date_welsh(text)

@@ -11,7 +11,7 @@ def mutate_number(number, next_word):
     :param next_word:
     :return:
     """
-    black_list = ["miliwn"]
+    black_list = ["miliwn", "gradd"]
     if next_word and next_word not in black_list and next_word in lexicon:
         info = lexicon[next_word]
         if "Fem" in info:

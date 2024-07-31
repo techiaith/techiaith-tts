@@ -2,7 +2,7 @@ from datetime import datetime
 from pathlib import Path
 
 _MAJOR = "0"
-_MINOR = "5"
+_MINOR = "6"
 # On main and in a nightly release the patch should be one ahead of the last
 # released build.
 _PATCH = "0"
