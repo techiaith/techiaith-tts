@@ -25,19 +25,22 @@ def clean_money(number, append):
     :param append:
     :return:
     """
+    money_word = "bunnoedd"
     money_sign = "£"
     if "$" in number:
         money_sign = "$"
+        money_word = "ddoleri"
     if "€" in number:
         money_sign = "€"
+        money_word = "ewro"
     money_number = number.replace(money_sign, "")
     cleaned_string = ""
     if "m" in number:
-        append += number_dict["m"]["lemma"] + " o bunnoedd"
+        append += number_dict["m"]["lemma"] + " o " + money_word
         number = money_number.replace("m", "")
         cleaned_string = find_numbers(number) + " " + append
     elif "b" in number:
-        append += number_dict["b"]["lemma"] + " o bunnoedd"
+        append += number_dict["b"]["lemma"] + " o " + money_word
         number = money_number.replace("b", "")
         cleaned_string = find_numbers(number) + " " + append
     elif "c" in number:
@@ -61,7 +64,11 @@ def clean_money(number, append):
                 c += 1
             cleaned_string += " " + number_dict["c"]["lemma"] + " "
         else:
-            cleaned_string = find_numbers(money_number) + " " + number_dict[money_sign]["lemma"]
+            append = "o "
+            cleaned_string = find_numbers(money_number) + " "
+            if money_sign in "$":
+                cleaned_string += append
+            cleaned_string += number_dict[money_sign]["lemma"]
     # if "punt" in cleaned_string:
     #     for mut in fem_mu:
     #         if not cleaned_string.startswith("un deg") and mut[0] in cleaned_string:

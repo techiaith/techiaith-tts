@@ -9,9 +9,9 @@ from .lookups import mut_numbers, numbers
 _time_re = re.compile(
     r"""\b
                           ((0?[0-9])|(1[0-1])|(1[2-9])|(2[0-3]))  # oriau
-                          :
+                          [:\.]
                           ([0-5][0-9])                            # munud
-                          (\s*y\\.b\\.|\s*yb|\s*yh|\s*yp|\s*yn|\s*y\\.h\\.)? # yb/yh
+                          (\s*y\\.b\\.|\s*yb|\s*yh|\s*yp|\s*y.bore|\s*y.nos|\s*y.hwyr|\s*yn|\s*y\\.h\\.)? # yb/yh
                           \b""",
     re.IGNORECASE | re.X,
 )
@@ -83,19 +83,22 @@ def _expand_time_welsh(match: "re.Match") -> str:
         time.append(_expand_num(hour, sep))
         am_pm = match.group(7)
         if am_pm is not None:
-            if "h" in am_pm:
+            if "h" in am_pm or "nos" in am_pm:
                 if real_hour < 12:
                     real_hour += 12
-        # bore = 12:01am - 11:59am
-        # canol dydd = 12:00 (dydd)
-        # prynhawn = 12:01pm - 5:00pm
-        # hwyr = 5:01pm - 11:59pm
-        if real_hour < 12:
-            time.append("y bore")
-        elif 12 < real_hour < 18:
-            time.append("y prynhawn")
-        elif 17 < real_hour < 24:
-            time.append("yr hwyr")
+        print(am_pm)
+        if am_pm not in ["y nos", "y bore", "y hwyr"]:
+            # bore = 12:01am - 11:59am
+            # canol dydd = 12:00 (dydd)
+            # prynhawn = 12:01pm - 5:00pm
+            # hwyr = 5:01pm - 11:59pm
+            print(time)
+            if real_hour < 12 and "y bore" not in time:
+                time.append("y bore")
+            elif 12 < real_hour < 18 and "y prynhawn" not in time:
+                time.append("y prynhawn")
+            elif 17 < real_hour < 24 and "yr hwyr" not in time:
+                time.append("yr hwyr")
     return " ".join(time)
 
 

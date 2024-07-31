@@ -177,6 +177,13 @@ phone_number_phrases = [
     ["01248 345321", "dim un dau pedwar wyth tri pedwar pump tri dau un"],
 ]
 
+road_names = [
+    ["A470", "A pedwar saith dim"],
+    ["A6", "A chwech"],
+    ["B6892", "B check wyth naw dau"],
+    ["M62", "M 64"],
+]
+
 tests = (
     numbers_mixed + large_numbers + comma_number_phrases + decimal_phrases + phone_number_phrases
 )  # + numbers_traditional + numbers_modern

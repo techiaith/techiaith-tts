@@ -12,6 +12,9 @@ from techiaith.tts.testun.time_norm import expand_time_welsh
 
 tests = [
     ["12:30yh", "hanner awr wedi hanner dydd"],
+    ["12.01yh", "un munud wedi hanner dydd"],
+    ["7:15 y bore", "chwarter awr wedi saith y bore"],
+    ["7:15 y nos", "chwarter awr wedi saith yr hwyr"],
     ["8:30", "hanner awr wedi wyth y bore"],
     ["20:30", "hanner awr wedi wyth yr hwyr"],
     ["16:01", "un munud wedi pedwar y prynhawn"],

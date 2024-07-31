@@ -176,7 +176,7 @@ COVID un deg naw?""",
         """Boneddigion a Boneddigesau, Bechgyn a Genethod, dowch yn llu! Mae atyniad newydd wedi cyrraedd \
 Pen Y Pier... Y Syrcas! Ond nid syrcas arferol mo hon, o na!""",
         """Boneddigion a Boneddigesau, Bechgyn a Genethod, dowch yn llu! Mae atyniad newydd wedi cyrraedd \
-Pen Y Pier... Y Syrcas! Ond nid syrcas arferol mo hon, o na!""",
+Pen Y Pier, Y Syrcas! Ond nid syrcas arferol mo hon, o na!""",
     ],
     [
         """1: 1 tbsp Olew olewydd oil

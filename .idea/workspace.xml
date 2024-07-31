@@ -7,6 +7,15 @@
     <list default="true" id="dff69ee7-03fa-4da4-9a53-0fecbb168f5f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev-requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dev-requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/techiaith/tts/testun/known_phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/tts/testun/known_phrases.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/techiaith/tts/testun/lookups.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/tts/testun/lookups.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/techiaith/tts/testun/money.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/tts/testun/money.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/techiaith/tts/testun/number_norm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/tts/testun/number_norm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/techiaith/tts/testun/time_norm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/techiaith/tts/testun/time_norm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/test_money_norm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test_money_norm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/test_number_norm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test_number_norm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/test_time_norm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test_time_norm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +81,7 @@
       <window_info id="Commit_Guest" show_stripe_button="false" />
       <window_info id="Pull Requests" show_stripe_button="false" />
       <window_info id="Learn" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32994792" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23776042" />
       <window_info id="Commit" order="1" weight="0.25" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -84,8 +93,9 @@
       <window_info anchor="bottom" id="Python Console" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems View" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.33033174" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.33028847" />
       <window_info anchor="bottom" id="Services" order="3" />
+      <window_info anchor="bottom" id="Find" order="3" visible="true" weight="0.33028847" />
       <window_info anchor="right" id="Plots" show_stripe_button="false" />
       <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
       <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
@@ -146,7 +156,9 @@
       <workItem from="1700467685952" duration="1900000" />
       <workItem from="1700560897011" duration="7900000" />
       <workItem from="1721120641004" duration="3991000" />
-      <workItem from="1721658754820" duration="139000" />
+      <workItem from="1721658754820" duration="1456000" />
+      <workItem from="1722325911703" duration="4288000" />
+      <workItem from="1722450968819" duration="3131000" />
     </task>
     <servers />
   </component>
