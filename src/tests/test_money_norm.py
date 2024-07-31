@@ -1,7 +1,6 @@
 """
 Test money normaliser
 """
-
 from techiaith.tts.testun.money import clean_money
 
 tests = [

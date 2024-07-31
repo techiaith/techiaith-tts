@@ -3,6 +3,8 @@ Script to replace known phrases in text
 """
 
 black_list = [
+    ["celsius", "selsius"],
+    ["Celsius", "Selsius"],
     ["golwg360", "golwg tri chwech dim"],
     ["golwg 360", "golwg tri chwech dim"],
     ["bro360", "bro tri chwech dim"],
