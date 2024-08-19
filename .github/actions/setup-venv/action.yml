@@ -32,20 +32,20 @@ runs:
         path: .venv
         key: ${{ inputs.cache-prefix }}-${{ runner.os }}-${{ env.PYTHON_VERSION }}-${{ hashFiles('requirements.txt', 'dev-requirements.txt') }}
 
-    - if: steps.virtualenv-cache.outputs.cache-hit != 'true'
-      shell: bash
+#    - if: steps.virtualenv-cache.outputs.cache-hit != 'true'
+    - shell: bash
       run: |
         # Set up virtual environment without cache hit.
         test -d .venv || virtualenv -p $(which python) --copies --reset-app-data .venv
         . .venv/bin/activate
         pip install -e .[dev]
 
-    - if: steps.virtualenv-cache.outputs.cache-hit == 'true'
-      shell: bash
-      run: |
-        # Set up virtual environment from cache hit.
-        . .venv/bin/activate
-        pip install --no-deps -e .[dev]
+#    - if: steps.virtualenv-cache.outputs.cache-hit == 'true'
+#      shell: bash
+#      run: |
+#        # Set up virtual environment from cache hit.
+#        . .venv/bin/activate
+#        pip install --no-deps -e .[dev]
 
     - shell: bash
       run: |
