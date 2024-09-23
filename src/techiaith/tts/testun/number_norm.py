@@ -210,9 +210,7 @@ def is_road(word_number):
     :param word_number:
     :return:
     """
-    road_regex = (
-        "[ABM][0-9]{1,4}"
-    )
+    road_regex = "[ABM][0-9]{1,4}"
     result = re.match(road_regex, word_number)
     if result:
         return True, result.group(0)
